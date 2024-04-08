@@ -1,5 +1,6 @@
 public class StrBild {
     public String sBild(String alphabet) {
+
         alphabet.replaceAll("(?m)^\\s*$[\r\n]+", "");
         StringBuilder stringBuilder = new StringBuilder();
 // Проверка первого символа В начале строки на Прописную букву и Добавление символа перед ним
@@ -18,6 +19,7 @@ public class StrBild {
                 }
             }
         }
+        System.out.println(stringBuilder);
         return String.valueOf(stringBuilder);
     }
 }
