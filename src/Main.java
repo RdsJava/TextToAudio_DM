@@ -50,7 +50,7 @@ public class Main {
                 stringBuilder.append(mapR100.replaceR100(s.charAt(i))).append(",");
                 }
             }
-        String listString = String.join(", ", stringBuilder);
+        String listString = String.join(",", stringBuilder);
         String listString2 = listString.replace(".wav,F:\\textToAudio/R100_DM/", "").replace("ОЗРА", "_");
         String listString3 = listString2.replace("F:\\textToAudio/R100_DM", "").replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
