@@ -1,21 +1,28 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class StrBild {
-    public void sBild() throws IOException {
+public class TextToAudioR100 {
+    public void textToAudioR100(String text) throws IOException {
 
-
+        Concatenate concatenateR100 = new Concatenate();
+        Duration duration = new Duration();
         MapR100 mapR100 = new MapR100();
         List<String> lines = new ArrayList<>();
+        List<String> r100 = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
         StringBuilder stringBuilderCheck = new StringBuilder();
+        String filePathName = "F:\\textToAudio/готовое/";
+        RenameFile renameFileF = new RenameFile();
 
         FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
         FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
-        String line;
+        String line = text;
 
+        //String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
+        String fileName = "Проба";//firstStringNoWhiteSpaceStartEnd.toUpperCase();
 
         // Удаление пустых строк и пробелов в конце и в начале строк
 
@@ -54,13 +61,37 @@ public class StrBild {
         if (string.endsWith("_")) {
             string = string.substring(0, string.length() - 1);
         }
+
         string = ">" + string; //Открытие языка
         string += ">"; // Закрытие языка
+
 
         System.out.println("string " + string);
         for (int i = 0; i < string.length(); i++) {
             stringBuilderCheck.append(mapR100.replaceR100(string.charAt(i))).append(",");
+
         }
+// Создать arryList и загнмть туда stringBilderCheck
+
+        r100 = Collections.singletonList(String.valueOf(stringBuilderCheck));
+
+
+
+
+
+
+
+        try {
+            concatenateR100.concatenateFiles(r100, filePathName + fileName + "_Ц+ ");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        File fileC = new File(filePathName + fileName + "_Ц+ ");
+
+        renameFileF.rename(filePathName + fileName + "_Ц+ ", duration.durationFile(fileC), ".wav");
+
+
 
         String listString = String.join(",", stringBuilderCheck);
         listString = listString.replace(".wav,F:\\textToAudio/R100_DM/Smoll/", "").replace("ОЗРА", "_");
