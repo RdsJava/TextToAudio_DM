@@ -5,12 +5,13 @@ import javax.sound.sampled.AudioSystem;
 import java.io.File;
 import java.io.SequenceInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Concatenate {
 
-    public Boolean concatenateFiles(List<String> sourceFilesList, String destinationFileName) throws Exception {
+    public Boolean concatenateFiles(String[] sourceFilesList, String destinationFileName) throws Exception {
         Boolean result = false;
 
         AudioInputStream audioInputStream = null;

@@ -5,9 +5,9 @@ public class MapR100 {
 
     public String replaceR100(char a) {
 
-        String chars = null;
 
-        Map<Character, String> radasteid100 = new HashMap<Character, String>();
+
+        Map<Character, String> radasteid100 = new HashMap<>();
 
         radasteid100.put('А', "F:\\textToAudio/R100_DM/Big/26А.wav");
         radasteid100.put('Б', "F:\\textToAudio/R100_DM/Big/23Б.wav");
@@ -79,13 +79,21 @@ public class MapR100 {
 
         radasteid100.put('_', "F:\\textToAudio/R100_DM/38ОЗРА.wav");
         radasteid100.put(',', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('"', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put(';', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put(':', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('!', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('?', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put(')', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('(', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('+', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('=', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('-', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('.', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('↓', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('@', "F:\\textToAudio/R100_DM/1ЦЖ.wav");
         radasteid100.put('$', "F:\\textToAudio/R100_DM/2ЩХ.wav");
         radasteid100.put('>', "F:\\textToAudio/R100_DM/37РИТЛ.wav");
-        radasteid100.put('5', "F:\\textToAudio/R100_DM/38ОЗРА.wav");
         radasteid100.put('#', "F:\\textToAudio/R100_DM/39СТЛУ.wav");
 
         return radasteid100.get(a) ;
