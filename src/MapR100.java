@@ -91,6 +91,10 @@ public class MapR100 {
         radasteid100.put('-', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('.', "F:\\textToAudio/R100_DM/3ФШ.wav");
         radasteid100.put('↓', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('»', "F:\\textToAudio/R100_DM/3ФШ.wav");
+        radasteid100.put('«', "F:\\textToAudio/R100_DM/3ФШ.wav");
+
+
         radasteid100.put('@', "F:\\textToAudio/R100_DM/1ЦЖ.wav");
         radasteid100.put('$', "F:\\textToAudio/R100_DM/2ЩХ.wav");
         radasteid100.put('>', "F:\\textToAudio/R100_DM/37РИТЛ.wav");

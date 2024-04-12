@@ -13,7 +13,6 @@ public class TextToAudioR100 {
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
-        StringBuilder stringBuilderCheck = new StringBuilder();
         String filePathName = "F:\\textToAudio/готовое/";
         RenameFile renameFileF = new RenameFile();
 
@@ -35,12 +34,11 @@ public class TextToAudioR100 {
             line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
 
             if (!line.equals("")) {
-
                 if (Character.isUpperCase(line.charAt(0))) {
-                    stringBuilder.append("@").append(line.charAt(0));
-                } else if (line.charAt(0) == '1' && line.charAt(1) == '0') {
-                    stringBuilder.append("десять");
-                } else if (line.charAt(0) == '0') {
+                    stringBuilder.append("@").append(line.charAt(0)); // Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
+                } else if (Character.isLowerCase(line.charAt(0))) {
+                    stringBuilder.append(line.charAt(0)); // Проверка первого символа В начале строки на строчную букву
+                                } else if (line.charAt(0) == '0') {
                     stringBuilder.append("ноль");
                 } else if (line.charAt(0) == '1') {
                     stringBuilder.append("один");
@@ -60,49 +58,43 @@ public class TextToAudioR100 {
                     stringBuilder.append("восемь");
                 } else if (line.charAt(0) == '9') {
                     stringBuilder.append("девять");
-
-
-
-                    stringBuilder.append("десять");// Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
-                    for (int i = 0; i < line.length(); i++) {
-                        if (Character.isUpperCase(line.charAt(i))) {  //Проверка строки на наличие прописных букв и добавление символа '$' перед ними
-                            stringBuilder.append("$").append(line.charAt(i));
-                        } else if (line.charAt(i) == '.') {
-                            stringBuilder.append(line.charAt(i)).append("#");
-                        } else if (line.charAt(i) == '!') {
-                            stringBuilder.append(line.charAt(i)).append("#");
-                        } else if (line.charAt(i) == '?') {
-                            stringBuilder.append(line.charAt(i)).append("#");
-                        } else if (line.charAt(i) == '0') {
-                            stringBuilder.append("ноль");
-                        } else if (line.charAt(i) == '1') {
-                            stringBuilder.append("один");
-                        } else if (line.charAt(i) == '2') {
-                            stringBuilder.append("два");
-                        } else if (line.charAt(i) == '3') {
-                            stringBuilder.append("три");
-                        } else if (line.charAt(i) == '4') {
-                            stringBuilder.append("четыре");
-                        } else if (line.charAt(i) == '5') {
-                            stringBuilder.append("пять");
-                        } else if (line.charAt(i) == '6') {
-                            stringBuilder.append("шесть");
-                        } else if (line.charAt(i) == '7') {
-                            stringBuilder.append("семь");
-                        } else if (line.charAt(i) == '8') {
-                            stringBuilder.append("восемь");
-                        } else if (line.charAt(i) == '9') {
-                            stringBuilder.append("девять");
-                        } else if (line.charAt(i) == '1' && line.charAt(i + 1) == '0') {
-                            stringBuilder.append("десять");
-
-                        } else {
-                            stringBuilder.append(line.charAt(i));
-                        }
-                    }
+                }
+            }
+            for (int i = 1; i < line.length(); i++) {
+                if (Character.isUpperCase(line.charAt(i))) {  //Проверка строки на наличие Прописных букв и добавление символа '$' перед ними
+                    stringBuilder.append("$").append(line.charAt(i));
+                } else if (line.charAt(i) == '.') {
+                    stringBuilder.append(line.charAt(i)).append("#");
+                } else if (line.charAt(i) == '!') {
+                    stringBuilder.append(line.charAt(i)).append("#");
+                } else if (line.charAt(i) == '?') {
+                    stringBuilder.append(line.charAt(i)).append("#");
+                               } else if (line.charAt(0) == '0') {
+                    stringBuilder.append("ноль");
+                } else if (line.charAt(i) == '1') {
+                    stringBuilder.append("один");
+                } else if (line.charAt(i) == '2') {
+                    stringBuilder.append("два");
+                } else if (line.charAt(i) == '3') {
+                    stringBuilder.append("три");
+                } else if (line.charAt(i) == '4') {
+                    stringBuilder.append("четыре");
+                } else if (line.charAt(i) == '5') {
+                    stringBuilder.append("пять");
+                } else if (line.charAt(i) == '6') {
+                    stringBuilder.append("шесть");
+                } else if (line.charAt(i) == '7') {
+                    stringBuilder.append("семь");
+                } else if (line.charAt(i) == '8') {
+                    stringBuilder.append("восемь");
+                } else if (line.charAt(i) == '9') {
+                    stringBuilder.append("девять");
+                } else {
+                    stringBuilder.append(line.charAt(i));
                 }
             }
         }
+
         System.out.println("line " + lines);
         System.out.println();
 
@@ -141,11 +133,12 @@ public class TextToAudioR100 {
         String listString = String.join(",", rad100);
         listString = listString.replace(".wav,F:\\textToAudio/R100_DM/Smoll/", "").replace("ОЗРА", "_");
         listString = listString.replace("F:\\textToAudio/R100_DM/Big/", "").replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
-        listString = listString.replace("F:\\textToAudio/R_DM/", "").replace(".wav,", "*");
+        listString = listString.replace("F:\\textToAudio/R_DM/", "").replace(".wav,", "");
 
         //System.out.println(stringBuilderCheck);
         System.out.println("Радастеид-100 с удалением путей++ " + listString);
     }
 }
+
 
 
