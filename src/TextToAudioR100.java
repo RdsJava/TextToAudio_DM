@@ -38,7 +38,7 @@ public class TextToAudioR100 {
                     stringBuilder.append("@").append(line.charAt(0)); // Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
                 } else if (Character.isLowerCase(line.charAt(0))) {
                     stringBuilder.append(line.charAt(0)); // Проверка первого символа В начале строки на строчную букву
-                                } else if (line.charAt(0) == '0') {
+                } else if (line.charAt(0) == '0') {
                     stringBuilder.append("ноль");
                 } else if (line.charAt(0) == '1') {
                     stringBuilder.append("один");
@@ -69,7 +69,7 @@ public class TextToAudioR100 {
                     stringBuilder.append(line.charAt(i)).append("#");
                 } else if (line.charAt(i) == '?') {
                     stringBuilder.append(line.charAt(i)).append("#");
-                               } else if (line.charAt(0) == '0') {
+                } else if (line.charAt(i) == '0') {
                     stringBuilder.append("ноль");
                 } else if (line.charAt(i) == '1') {
                     stringBuilder.append("один");
@@ -113,7 +113,7 @@ public class TextToAudioR100 {
 
         System.out.println("string " + string);
         String[] rad100 = new String[string.length()];
-        String ss = null;
+        String ss;
         for (int i = 0; i < string.length(); i++) {
             ss = mapR100.replaceR100(string.charAt(i));
             rad100[i] = ss;
