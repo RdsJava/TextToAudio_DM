@@ -19,7 +19,7 @@ public class SimpleWindow extends JFrame {
         //TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
 
         // подобраны оптимальным образом с учетом предпочтений всех элементов, размещенных в этом окне.
-        JTextArea textArea = new JTextArea(80, 40);
+        JTextArea textArea = new JTextArea(63, 40);
         JButton click = new JButton("сlik");// Создание кнопки
         JCheckBox chiklo = new JCheckBox("Циклохладвит", false);
         JCheckBox nomernoi = new JCheckBox("Номерной", false);
