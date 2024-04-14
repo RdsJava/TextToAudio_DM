@@ -1,3 +1,5 @@
+package org.example;
+
 import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
@@ -14,12 +16,7 @@ public class Main {
         JFrame myWindow = new SimpleWindow(); /** Для окна нужна "рама" - Frame */
         myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // закрывает окно нажатием на крестик
         myWindow.setVisible(true);  /** Чтобы отобразить окно на экране */
-
-
-
-
     }
-
 }
 
 

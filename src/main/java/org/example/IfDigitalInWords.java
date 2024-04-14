@@ -1,3 +1,5 @@
+package org.example;
+
 public class IfDigitalInWords {
 
     public String checkDigitalChar(char digital) {
