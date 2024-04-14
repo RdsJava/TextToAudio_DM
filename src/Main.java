@@ -1,20 +1,25 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import javax.swing.*;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.util.List;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
+        //Создание окна для ввода текста
+        JFrame myWindow = new SimpleWindow(); /** Для окна нужна "рама" - Frame */
+        myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // закрывает окно нажатием на крестик
+        myWindow.setVisible(true);  /** Чтобы отобразить окно на экране */
 
-        String s = "D:\\text.txt";
-        ReadFile readFile = new ReadFile();
 
-        var g = readFile.FileRead(s);
 
-        System.out.println(Arrays.toString(g));
+
     }
+
 }
 
 
