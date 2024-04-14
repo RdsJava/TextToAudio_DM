@@ -9,7 +9,7 @@ public class TextToAudioR100 {
         Duration duration = new Duration();
         MapR100 mapR100 = new MapR100();
         RenameFile renameFileF = new RenameFile();
-        IfDigital ifDigital = new IfDigital();
+        IfDigitalInWords ifDigital =new IfDigitalInWords();
 
 
         String filePathName = "F:\\textToAudio/готовое/";
