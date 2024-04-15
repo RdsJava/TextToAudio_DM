@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.maps.MapR100;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,6 @@ public class TextToAudioR100 {
         MapR100 mapR100 = new MapR100();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
-
 
         String filePathName = "F:\\textToAudio/готовое/";
         List<String> lines = new ArrayList<>();
@@ -37,7 +38,7 @@ public class TextToAudioR100 {
 
             if (!line.equals("")) {
                 if (Character.isUpperCase(line.charAt(0))) {
-                    stringBuilder.append("@").append(line.charAt(0)); // Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
+                    stringBuilder.append("^").append(line.charAt(0)); // Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
                 } else if (Character.isLowerCase(line.charAt(0))) {
                     stringBuilder.append(line.charAt(0)); // Проверка первого символа В начале строки на строчную букву
                 } else if (String.valueOf(line.charAt(0)).matches("\\d")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом
@@ -46,14 +47,14 @@ public class TextToAudioR100 {
             }
 
             for (int i = 1; i < line.length(); i++) {
-                if (Character.isUpperCase(line.charAt(i))) {  //Проверка строки на наличие Прописных букв и добавление символа '$' перед ними
-                    stringBuilder.append("$").append(line.charAt(i));
+                if (Character.isUpperCase(line.charAt(i))) {  //Проверка строки на наличие Прописных букв и добавление символа '#' перед ними
+                    stringBuilder.append("#").append(line.charAt(i));
                 } else if (line.charAt(i) == '.') {
-                    stringBuilder.append(line.charAt(i)).append("#");
+                    stringBuilder.append(line.charAt(i)).append("$");
                 } else if (line.charAt(i) == '!') {
-                    stringBuilder.append(line.charAt(i)).append("#");
+                    stringBuilder.append(line.charAt(i)).append("$");
                 } else if (line.charAt(i) == '?') {
-                    stringBuilder.append(line.charAt(i)).append("#");
+                    stringBuilder.append(line.charAt(i)).append("$");
                 } else if (String.valueOf(line.charAt(i)).matches("-?\\d+(\\.\\d+)?")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом
 
                     
@@ -63,7 +64,6 @@ public class TextToAudioR100 {
                 }
             }
         }
-
 
         System.out.println("line " + lines);
         System.out.println();
@@ -100,7 +100,6 @@ public class TextToAudioR100 {
         File fileR100 = new File(filePathName + fileName + "_Р100 ");
 
         renameFileF.rename(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
-
 
         String listString = String.join(",", rad100);
         listString = listString.replace(".wav,F:\\textToAudio/R100_DM/Smoll/", "").

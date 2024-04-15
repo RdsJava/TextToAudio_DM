@@ -10,25 +10,21 @@ public class SimpleWindow extends JFrame {
     public SimpleWindow() {
         setTitle("WINDOW 1");
 
-
-
-       // TextToAudioChiklo textToAudioChiklo = new TextToAudioChiklo();
-       // TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
-       // TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();
+        TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
+        TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
+        TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();
         TextToAudioR100 textToAudioR100 = new TextToAudioR100();
-
-
         //TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
 
-        // подобраны оптимальным образом с учетом предпочтений всех элементов, размещенных в этом окне.
+
+
         JTextArea textArea = new JTextArea(63, 40);
         JButton click = new JButton("сlik");// Создание кнопки
-        JCheckBox chiklo = new JCheckBox("Циклохладвит", false);
+        JCheckBox ciklo = new JCheckBox("Циклохладвит", false);
         JCheckBox nomernoi = new JCheckBox("Номерной", false);
         JCheckBox ritmo = new JCheckBox("Ритмохладавит", false);
         JCheckBox radasteid100 = new JCheckBox("Радастеид - 100", false);
         JCheckBox radasteid = new JCheckBox("Радастеид", false);
-
 
 
         JPanel panel = new JPanel();
@@ -36,13 +32,14 @@ public class SimpleWindow extends JFrame {
 
 //Созданное поле добавляется в окно аплета методом add.
         panel.add(textArea);
+
         panel.add(click);
 
-        //panel.add(chiklo);
-        //panel.add(nomernoi);
-        //panel.add(ritmo);
+        panel.add(ciklo);
+        panel.add(nomernoi);
+        panel.add(ritmo);
         panel.add(radasteid100);
-        //panel.add(radasteid);
+        panel.add(radasteid);
 
         setContentPane(panel); // Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.
         pack();
@@ -76,20 +73,20 @@ public class SimpleWindow extends JFrame {
                     throw new RuntimeException(ex);
                 }
                 try {
-                    if (chiklo.isSelected()) {
-                      //  textToAudioChiklo.textToAudioChiklo(text);
+                    if (ciklo.isSelected()) {
+                        textToAudioCiklo.textToAudioCiklo(text);
                     }
                     if (nomernoi.isSelected()) {
-                       // textToAudioNomernoi.textToAudioNomernoi(text);
+                        textToAudioNomernoi.textToAudioNomernoi(text);
                     }
                     if (ritmo.isSelected()) {
-                       // textToAudioRitmo.textToAudioRitmo(text);
+                        textToAudioRitmo.textToAudioRitmo(text);
                     }
                     if (radasteid100.isSelected()) {
                         textToAudioR100.textToAudioR100(text);
                     }
                     if (radasteid.isSelected()) {
-                       // textToAudioRadasteid.textToAudioRadasteid(text);
+                        // textToAudioRadasteid.textToAudioRadasteid(text);
                     }
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
