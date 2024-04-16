@@ -12,7 +12,7 @@ public class TextToAudioCiklo {
         MapCiklo map = new MapCiklo();
         String checkEndLanguage = "оль";
         String checkLanguagePath = "Ciklo_DM";
-        String endFileName = "Ц+ ";
+        String endFileName = " Ц+ ";
 
 
         Concatenate concatenate = new Concatenate();

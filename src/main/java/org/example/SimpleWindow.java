@@ -8,6 +8,7 @@ import java.io.*;
 
 public class SimpleWindow extends JFrame {
     public SimpleWindow() {
+        super();
         setTitle("WINDOW 1");
 
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
@@ -16,10 +17,10 @@ public class SimpleWindow extends JFrame {
         TextToAudioR100 textToAudioR100 = new TextToAudioR100();
         //TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
 
+        JTextArea textArea = new JTextArea(40, 30);
 
 
-        JTextArea textArea = new JTextArea(63, 40);
-        JButton click = new JButton("сlik");// Создание кнопки
+        JButton click = new JButton("Создать");// Создание кнопки
         JCheckBox ciklo = new JCheckBox("Циклохладвит", false);
         JCheckBox nomernoi = new JCheckBox("Номерной", false);
         JCheckBox ritmo = new JCheckBox("Ритмохладавит", false);
@@ -27,12 +28,12 @@ public class SimpleWindow extends JFrame {
         JCheckBox radasteid = new JCheckBox("Радастеид", false);
 
 
+
         JPanel panel = new JPanel();
         panel.setLayout(new FlowLayout()); // FlowLayout - Менеджер последовательного размещения
 
 //Созданное поле добавляется в окно аплета методом add.
         panel.add(textArea);
-
         panel.add(click);
 
         panel.add(ciklo);
@@ -41,9 +42,8 @@ public class SimpleWindow extends JFrame {
         panel.add(radasteid100);
         panel.add(radasteid);
 
-        setContentPane(panel); // Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.
-        pack();
-
+        setContentPane(panel); /* Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.*/
+        pack(); //устанавливает такой минимальный размер контейнера, который достаточен для отображения всех компонентов.
 
 // метод для сохранения в файл введенного текста в поле
         click.addActionListener(new ActionListener() {
@@ -51,7 +51,7 @@ public class SimpleWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String d = textArea.getText();
 
-                //Запишем в файл какой-нибудь текст:
+                //Запись в файл текста:
                 try {
                     FileWriter writer = new FileWriter("F:\\textToAudio/doc.txt");
                     writer.write(d);
