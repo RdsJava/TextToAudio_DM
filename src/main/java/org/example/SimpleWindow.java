@@ -11,19 +11,23 @@ public class SimpleWindow extends JFrame {
         super();
         setTitle("WINDOW 1");
 
+        TextAudioOporiHladovit textToAudioOporiHladovit = new TextAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
         TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
         TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();
+        TextToAudioOporiRadasteid textToAudioOporiRadasteid = new  TextToAudioOporiRadasteid();
         TextToAudioR100 textToAudioR100 = new TextToAudioR100();
-        //TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
+        TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
 
         JTextArea textArea = new JTextArea(40, 30);
 
 
         JButton click = new JButton("Создать");// Создание кнопки
+        JCheckBox o_hladovit = new JCheckBox("Опоры Хладавит", false);
         JCheckBox ciklo = new JCheckBox("Циклохладвит", false);
         JCheckBox nomernoi = new JCheckBox("Номерной", false);
         JCheckBox ritmo = new JCheckBox("Ритмохладавит", false);
+        JCheckBox o_radasteid = new JCheckBox("Опоры Радастеид", false);
         JCheckBox radasteid100 = new JCheckBox("Радастеид - 100", false);
         JCheckBox radasteid = new JCheckBox("Радастеид", false);
 
@@ -36,9 +40,11 @@ public class SimpleWindow extends JFrame {
         panel.add(textArea);
         panel.add(click);
 
+        panel.add(o_hladovit);
         panel.add(ciklo);
         panel.add(nomernoi);
         panel.add(ritmo);
+        panel.add(o_radasteid);
         panel.add(radasteid100);
         panel.add(radasteid);
 
@@ -73,6 +79,9 @@ public class SimpleWindow extends JFrame {
                     throw new RuntimeException(ex);
                 }
                 try {
+                    if (o_hladovit.isSelected()) {
+                        textToAudioOporiHladovit.textToAudioOporiHladovit(text);
+                    }
                     if (ciklo.isSelected()) {
                         textToAudioCiklo.textToAudioCiklo(text);
                     }
@@ -82,11 +91,14 @@ public class SimpleWindow extends JFrame {
                     if (ritmo.isSelected()) {
                         textToAudioRitmo.textToAudioRitmo(text);
                     }
+                    if (o_radasteid.isSelected()) {
+                        textToAudioOporiRadasteid.textToAudioOporiRadasteid(text);
+                    }
                     if (radasteid100.isSelected()) {
                         textToAudioR100.textToAudioR100(text);
                     }
                     if (radasteid.isSelected()) {
-                        // textToAudioRadasteid.textToAudioRadasteid(text);
+                        textToAudioRadasteid.textToAudioRadasteid(text);
                     }
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);

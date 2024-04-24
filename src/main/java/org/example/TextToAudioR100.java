@@ -78,8 +78,8 @@ public class TextToAudioR100 {
             string = string.substring(0, string.length() - 1);
         }
 
-        string = "`" + ">" + string; //Открытие языка
-        string = string + ">" + "~"; // Закрытие языка
+        string = ">" + string; //Открытие языка
+        string = string + ">"; // Закрытие языка
 
         System.out.println("string " + string);
         String[] rad100 = new String[string.length()];
@@ -102,17 +102,25 @@ public class TextToAudioR100 {
         renameFileF.rename(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rad100);
-        listString = listString.replace(".wav,F:\\textToAudio/R100_DM/Smoll/", "").
+        listString = listString.replace(".wav,F:\\textToAudio/R100_AV", "").
 
                 replace("ОЗРА", "_");
 
-        listString = listString.replace("F:\\textToAudio/R100_DM/Big/", "").
+        listString = listString.replace(".wav,F:\\textToAudio/R100_AV", "").
 
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
-        listString = listString.replace("F:\\textToAudio/R_DM/", "").
+        //listString = listString.replace("F:\\textToAudio/R100_AV/", "").
 
-                replace(".wav,", "");
+               // replace(".wav,", "");
+        listString = listString.replace("(Заглавные буквы в начале строки)", "");
+        listString = listString.replace("(Заглавные буквы внутри строки)", "");
+        listString = listString.replace("(знаки препинания)" , "");
+        listString = listString.replace("(отделяет слова)", "");
+        listString = listString.replace("(отделяет предложения)", "");
+        listString = listString.replace("F:\\textToAudio/R_AV/","");
+        listString = listString.replace(".wav","");
+
 
         //System.out.println(stringBuilderCheck);
         System.out.println("Радастеид-100 с удалением путей++ " + listString);

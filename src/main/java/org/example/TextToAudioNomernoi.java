@@ -11,8 +11,8 @@ public class TextToAudioNomernoi {
 
             MapNomernoi map = new MapNomernoi();
             String checkEndLanguage = "";
-            String checkLanguagePath = "Nomernoi_DM";
-            String endFileName = " N+ ";
+            String checkLanguagePath = "Nomernoi_AV/";
+            String endFileName = " N ";
 
 
             Concatenate concatenate = new Concatenate();
@@ -84,8 +84,9 @@ public class TextToAudioNomernoi {
 
             String listString = String.join(",", language);
             listString = listString.replace(".wav,F:\\textToAudio/" + checkLanguagePath, "");
-            listString = listString.replace("F:\\textToAudio/" + checkLanguagePath, "");
+            listString = listString.replace("F:\\textToAudio/" + checkLanguagePath, "").replaceAll("\\d", "");
             listString = listString.replace(checkEndLanguage, "");
+            listString = listString.replace(".wav", "");
 
             System.out.println(endFileName + " с удалением путей++ " + listString);
         }

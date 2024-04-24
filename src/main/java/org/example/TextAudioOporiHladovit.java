@@ -1,18 +1,19 @@
 package org.example;
 
-import org.example.maps.MapRitmo;
+import org.example.maps.MapCiklo;
+import org.example.maps.MapO_H;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextToAudioRitmo {
-    public void textToAudioRitmo(String text) throws IOException {
+public class TextAudioOporiHladovit {
+    public void textToAudioOporiHladovit(String text) throws IOException {
 
-        MapRitmo map = new MapRitmo();
-        String checkEndLanguage = "ИРЪ";
-        String checkLanguagePath = "Ritmo_AV/";
-        String endFileName = " Р ";
+        MapO_H map = new MapO_H();
+        //String checkEndLanguage = "оль";
+        String checkLanguagePath = "O_Hladavit_AV/";
+        String endFileName = " О_Х ";
 
 
         Concatenate concatenate = new Concatenate();
@@ -37,7 +38,7 @@ public class TextToAudioRitmo {
             line = line.replaceAll("\\s+", " ").trim().concat("\n");
             line = line.replaceAll("(?m)^[ \t]*\r?\n", ""); //удалением пустых строк
             line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
-            line = line.replaceAll("[^А-ё 0-9]", ""); //Замена пробелов на '_'
+            line = line.replaceAll("[^А-ё 0-9_]", ""); //Замена символов на '_'
 
             if (!line.equals("")) {
 
@@ -62,6 +63,9 @@ public class TextToAudioRitmo {
             string = string.substring(0, string.length() - 1);
         }
 
+        string = ">" + string; //Открытие языка
+        string = string + "$"; // Закрытие языка
+
         System.out.println("string " + string);
         String[] language = new String[string.length()];
         String ss;
@@ -85,10 +89,9 @@ public class TextToAudioRitmo {
         String listString = String.join(",", language);
         listString = listString.replace(".wav,F:\\textToAudio/" + checkLanguagePath, "");
         listString = listString.replace("F:\\textToAudio/" + checkLanguagePath, "");
-        listString = listString.replace(checkEndLanguage, "");
+        //listString = listString.replace(checkEndLanguage, "");
 
         System.out.println(endFileName + " с удалением путей++ " + listString);
     }
 }
-
 
