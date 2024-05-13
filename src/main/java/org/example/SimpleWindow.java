@@ -9,7 +9,7 @@ import java.io.*;
 public class SimpleWindow extends JFrame {
     public SimpleWindow() {
         super();
-        setTitle("WINDOW 1");
+        setTitle("Языки");
 
         TextAudioOporiHladovit textToAudioOporiHladovit = new TextAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
@@ -18,6 +18,7 @@ public class SimpleWindow extends JFrame {
         TextToAudioOporiRadasteid textToAudioOporiRadasteid = new  TextToAudioOporiRadasteid();
         TextToAudioR100 textToAudioR100 = new TextToAudioR100();
         TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
+        TextToAudioRozuzOpori textToAudioRozuzOpori = new TextToAudioRozuzOpori();
 
         JTextArea textArea = new JTextArea(40, 30);
 
@@ -30,6 +31,7 @@ public class SimpleWindow extends JFrame {
         JCheckBox o_radasteid = new JCheckBox("Опоры Радастеид", false);
         JCheckBox radasteid100 = new JCheckBox("Радастеид - 100", false);
         JCheckBox radasteid = new JCheckBox("Радастеид", false);
+        JCheckBox rozuzOpori = new JCheckBox("Розуз-опоры", false);
 
 
 
@@ -47,6 +49,7 @@ public class SimpleWindow extends JFrame {
         panel.add(o_radasteid);
         panel.add(radasteid100);
         panel.add(radasteid);
+        panel.add(rozuzOpori);
 
         setContentPane(panel); /* Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.*/
         pack(); //устанавливает такой минимальный размер контейнера, который достаточен для отображения всех компонентов.
@@ -99,6 +102,9 @@ public class SimpleWindow extends JFrame {
                     }
                     if (radasteid.isSelected()) {
                         textToAudioRadasteid.textToAudioRadasteid(text);
+                    }
+                    if (rozuzOpori.isSelected()) {
+                        textToAudioRozuzOpori.textToAudioRozuzOpori(text);
                     }
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
