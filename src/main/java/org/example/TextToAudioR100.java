@@ -36,7 +36,7 @@ public class TextToAudioR100 {
             line = line.replaceAll("(?m)^[ \t]*\r?\n", ""); //удалением пустых строк
             line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
 
-            if (!line.equals("")) {
+            if (!line.isEmpty()) {
                 if (Character.isUpperCase(line.charAt(0))) {
                     stringBuilder.append("^").append(line.charAt(0)); // Проверка первого символа В начале строки на Прописную букву и Добавление символа '@' перед ним
                 } else if (Character.isLowerCase(line.charAt(0))) {

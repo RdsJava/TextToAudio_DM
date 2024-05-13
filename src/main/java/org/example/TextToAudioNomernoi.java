@@ -10,7 +10,6 @@ public class TextToAudioNomernoi {
         public void textToAudioNomernoi(String text) throws IOException {
 
             MapNomernoi map = new MapNomernoi();
-            String checkEndLanguage = "";
             String checkLanguagePath = "Nomernoi_AV/";
             String endFileName = " N ";
 
@@ -39,7 +38,7 @@ public class TextToAudioNomernoi {
                 line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
                 line = line.replaceAll("[^А-ё 0-9]", ""); //Замена пробелов на '_'
 
-                if (!line.equals("")) {
+                if (!line.isEmpty()) {
 
                     for (int i = 0; i < line.length(); i++) {
                         if (String.valueOf(line.charAt(i)).matches("-?\\d+(\\.\\d+)?")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом
@@ -85,7 +84,6 @@ public class TextToAudioNomernoi {
             String listString = String.join(",", language);
             listString = listString.replace(".wav,F:\\textToAudio/" + checkLanguagePath, "");
             listString = listString.replace("F:\\textToAudio/" + checkLanguagePath, "").replaceAll("\\d", "");
-            listString = listString.replace(checkEndLanguage, "");
             listString = listString.replace(".wav", "");
 
             System.out.println(endFileName + " с удалением путей++ " + listString);

@@ -22,8 +22,8 @@ public class SimpleWindow extends JFrame {
 
         JTextArea textArea = new JTextArea(40, 30);
 
-
         JButton click = new JButton("Создать");// Создание кнопки
+
         JCheckBox o_hladovit = new JCheckBox("Опоры Хладавит", false);
         JCheckBox ciklo = new JCheckBox("Циклохладвит", false);
         JCheckBox nomernoi = new JCheckBox("Номерной", false);
@@ -68,7 +68,7 @@ public class SimpleWindow extends JFrame {
                 } catch (IOException ex) {
                     System.out.println(ex.getMessage());
                 }
-                BufferedReader brTest = null;
+                BufferedReader brTest;
                 try {
                     brTest = new BufferedReader(new FileReader("F:\\textToAudio/doc.txt"));
                 } catch (FileNotFoundException ex) {

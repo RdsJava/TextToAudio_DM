@@ -40,7 +40,7 @@ public class TextToAudioOporiHladovit {
             line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
             line = line.replaceAll("[^А-ё 0-9_]", ""); //Замена символов на '_'
 
-            if (!line.equals("")) {
+            if (!line.isEmpty()) {
 
                 for (int i = 0; i < line.length(); i++) {
                     if (String.valueOf(line.charAt(i)).matches("-?\\d+(\\.\\d+)?")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом

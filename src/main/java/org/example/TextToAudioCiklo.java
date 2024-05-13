@@ -37,11 +37,11 @@ public class TextToAudioCiklo {
             line = line.replaceAll("\\s+", " ").trim().concat("\n");
             line = line.replaceAll("(?m)^[ \t]*\r?\n", ""); //удалением пустых строк
             line = line.replaceAll("\\s", "_"); //Замена пробелов на '_'
-            line = line.replaceAll("[^А-ё 0-9 _]", ""); //Удаление символов кроме букв и цифр
+            line = line.replaceAll("[^А-ё 0-9_]", ""); //Удаление символов кроме букв и цифр
             line = line.replaceAll("__", "_");// Замена двойных на одинарные
 
 
-            if (!line.equals("")) {
+            if (!line.isEmpty()) {
 
                 for (int i = 0; i < line.length(); i++) {
                     if (String.valueOf(line.charAt(i)).matches("-?\\d+(\\.\\d+)?")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом

@@ -7,14 +7,13 @@ import javax.sound.sampled.AudioSystem;
 import java.io.File;
 import java.io.SequenceInputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Concatenate {
 
-    public Boolean concatenateFiles(String[] sourceFilesList, String destinationFileName) throws Exception {
-        Boolean result = false;
+    public void concatenateFiles(String[] sourceFilesList, String destinationFileName) throws Exception {
+        boolean result = false;
 
         AudioInputStream audioInputStream = null;
         List<AudioInputStream> audioInputStreamList = null;
@@ -59,6 +58,5 @@ public class Concatenate {
             }
         }
 
-        return result;
     }
 }

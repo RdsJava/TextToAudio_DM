@@ -23,7 +23,7 @@ public class TextToAudioRozuzOpori {
         FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
         FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
-        String line = text;
+        String line;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
         String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
