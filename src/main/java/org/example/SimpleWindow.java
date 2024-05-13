@@ -11,7 +11,7 @@ public class SimpleWindow extends JFrame {
         super();
         setTitle("Языки");
 
-        TextAudioOporiHladovit textToAudioOporiHladovit = new TextAudioOporiHladovit();
+        TextToAudioOporiHladovit textToAudioOporiHladovit = new TextToAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
         TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
         TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();

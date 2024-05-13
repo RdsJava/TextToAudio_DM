@@ -1,19 +1,19 @@
 package org.example;
 
-import org.example.maps.MapCiklo;
 import org.example.maps.MapO_H;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextAudioOporiHladovit {
+public class TextToAudioOporiHladovit {
     public void textToAudioOporiHladovit(String text) throws IOException {
 
         MapO_H map = new MapO_H();
         //String checkEndLanguage = "оль";
         String checkLanguagePath = "O_Hladavit_AV/";
         String endFileName = " О_Х ";
+
 
 
         Concatenate concatenate = new Concatenate();
