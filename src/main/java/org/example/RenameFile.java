@@ -8,9 +8,9 @@ import java.nio.file.NoSuchFileException;
 
 public class RenameFile {
 
-    public File rename(String fileName, String fileTime, String end) {
+    public void renameFile(String fileName, String fileTime, String end) {
 
-        File file = null;
+        File file;
         File dest = null;
         try {
 
@@ -35,6 +35,5 @@ public class RenameFile {
                 IOException e) {
             e.printStackTrace();
         }
-        return dest;
     }
 }

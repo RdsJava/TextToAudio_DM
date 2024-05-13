@@ -90,7 +90,7 @@ public class TextToAudioRozuzOpori {
         }
 
         File fileR100 = new File(filePathName + fileName + "_Розуз_опоры ");
-        renameFileF.rename(filePathName + fileName + "_Розуз_опоры ", duration.durationFileOnly48kGh(fileR100), ".wav");
+        renameFileF.renameFile(filePathName + fileName + "_Розуз_опоры ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rozuzOpor);
         listString = listString.replace(",F:\\textToAudio/Rozuz_Op_AV/", "").

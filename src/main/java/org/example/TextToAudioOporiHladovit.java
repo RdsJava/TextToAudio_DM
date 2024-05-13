@@ -84,7 +84,7 @@ public class TextToAudioOporiHladovit {
 
         File fileLanguage = new File(filePathName + fileName + endFileName);
 
-        renameFileF.rename(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
+        renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
         String listString = String.join(",", language);
         listString = listString.replace(".wav,F:\\textToAudio/" + checkLanguagePath, "");

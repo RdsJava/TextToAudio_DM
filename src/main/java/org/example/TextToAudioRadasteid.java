@@ -77,15 +77,15 @@ public class TextToAudioRadasteid {
         }
 
         try {
-            concatenate.concatenateFiles(radadasteid, filePathName + fileName + "Радастеид ");
+            concatenate.concatenateFiles(radadasteid, filePathName + fileName + " Радастеид ");
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
 
-        File fileR100 = new File(filePathName + fileName + "Радастеид ");
+        File fileR100 = new File(filePathName + fileName + " Радастеид ");
 
-        renameFileF.rename(filePathName + fileName + "Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
+        renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", radadasteid);
         listString = listString.replace(".wav,F:\\textToAudio/Radasteid_AV", "");

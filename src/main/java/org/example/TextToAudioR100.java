@@ -57,7 +57,7 @@ public class TextToAudioR100 {
                     stringBuilder.append(line.charAt(i)).append("$");
                 } else if (String.valueOf(line.charAt(i)).matches("-?\\d+(\\.\\d+)?")) { // Проверка на цифру(от 0 до 9) с возвратом цифруСловом
 
-                    
+
                     stringBuilder.append(ifDigital.checkDigitalChar(line.charAt(i)));
                 } else {
                     stringBuilder.append(line.charAt(i));
@@ -99,7 +99,7 @@ public class TextToAudioR100 {
 
         File fileR100 = new File(filePathName + fileName + "_Р100 ");
 
-        renameFileF.rename(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
+        renameFileF.renameFile(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rad100);
         listString = listString.replace(".wav,F:\\textToAudio/R100_AV", "").
