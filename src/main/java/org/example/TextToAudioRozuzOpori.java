@@ -15,14 +15,14 @@ public class TextToAudioRozuzOpori {
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = "F:\\textToAudio/готовое/";
+        String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
+        FileReader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
+        FileWriter fw = new FileWriter("/Users/recmac/Yandex.Disk.localized/textToAudio/docR100.txt");
         String line;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -93,13 +93,13 @@ public class TextToAudioRozuzOpori {
         renameFileF.renameFile(filePathName + fileName + "_Розуз_опоры ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rozuzOpor);
-        listString = listString.replace(",F:\\textToAudio/Rozuz_Op_AV/", "").
+        listString = listString.replace(",/Users/recmac/Yandex.Disk.localized/textToAudio/Rozuz_Op_AV/", "").
                 replace("_Отделение слов", "_");
 
-        listString = listString.replace(".wav,F:\\textToAudio/Rozuz_OP_AV/", "").
+        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/Rozuz_OP_AV/", "").
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
-        listString = listString.replace("F:\\textToAudio/Rozuz_OP_AV/","");
+        listString = listString.replace("/Users/recmac/Yandex.Disk.localized/textToAudio/Rozuz_OP_AV/","");
         listString = listString.replace("_Начало переизлучения","< ");
         listString = listString.replace("_Конец переизлучения"," >");
         listString = listString.replace("_Заглавные буквы","^");

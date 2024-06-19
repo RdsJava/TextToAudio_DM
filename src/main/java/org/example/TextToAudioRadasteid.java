@@ -15,14 +15,14 @@ public class TextToAudioRadasteid {
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = "F:\\textToAudio/готовое/";
+        String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
+        FileReader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
+        FileWriter fw = new FileWriter("/Users/recmac/Yandex.Disk.localized/textToAudio/docR100.txt");
         String line;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -88,12 +88,12 @@ public class TextToAudioRadasteid {
         renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", radadasteid);
-        listString = listString.replace(".wav,F:\\textToAudio/Radasteid_AV", "");
+        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/Radasteid_AV", "");
 
-        listString = listString.replace(".wav,F:\\textToAudio/Radasteid_AV", "");
+        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/Radasteid_AV", "");
 
 
-        System.out.println("Радастеид-100 с удалением путей++ " + listString);
+        System.out.println("Радастеид с удалением путей++ " + listString);
     }
 }
 

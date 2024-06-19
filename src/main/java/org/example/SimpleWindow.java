@@ -20,7 +20,7 @@ public class SimpleWindow extends JFrame {
         TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
         TextToAudioRozuzOpori textToAudioRozuzOpori = new TextToAudioRozuzOpori();
 
-        JTextArea textArea = new JTextArea(40, 30);
+        JTextArea textArea = new JTextArea(30, 30);
 
         JButton click = new JButton("Создать");// Создание кнопки
 
@@ -62,7 +62,7 @@ public class SimpleWindow extends JFrame {
 
                 //Запись в файл текста:
                 try {
-                    FileWriter writer = new FileWriter("F:\\textToAudio/doc.txt");
+                    FileWriter writer = new FileWriter("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
                     writer.write(d);
                     writer.flush();//Данные, которые вы записываете в Writer, иногда временно хранятся в буфере, метод flush() используется для сброса (flush) всех данных из буфера в целевой объект.
                 } catch (IOException ex) {
@@ -70,7 +70,7 @@ public class SimpleWindow extends JFrame {
                 }
                 BufferedReader brTest;
                 try {
-                    brTest = new BufferedReader(new FileReader("F:\\textToAudio/doc.txt"));
+                    brTest = new BufferedReader(new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt"));
                 } catch (FileNotFoundException ex) {
                     throw new RuntimeException(ex);
                 }
