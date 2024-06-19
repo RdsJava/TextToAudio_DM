@@ -14,17 +14,17 @@ public class TextToAudioCiklo {
         String checkLanguagePath = "Ciklo_AV/";
         String endFileName = " Ц ";
 
-
+        PathToAudio pathToAudio = new PathToAudio();
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital = new IfDigitalInWords();
-        String filePathName = "F:\\textToAudio/готовое/";
+        String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
         String line;
         List<String> lines = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
 
-        Reader fr = new FileReader("F:\\textToAudio/doc.txt");
+        Reader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
         BufferedReader br = new BufferedReader(fr);
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -85,8 +85,8 @@ public class TextToAudioCiklo {
         renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
         String listString = String.join(",", language);
-        listString = listString.replace(".wav,F:\\textToAudio/" + checkLanguagePath, "");
-        listString = listString.replace("F:\\textToAudio/" + checkLanguagePath, "");
+        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + checkLanguagePath, "");
+        listString = listString.replace(  pathToAudio.getPathToAudio() + checkLanguagePath, "");
         listString = listString.replace(checkEndLanguage, "");
 
         System.out.println(endFileName + " с удалением путей++ " + listString);

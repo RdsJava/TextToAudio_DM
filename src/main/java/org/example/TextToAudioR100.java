@@ -9,20 +9,21 @@ import java.util.List;
 public class TextToAudioR100 {
     public void textToAudioR100(String text) throws IOException {
 
+        PathToAudio pathToAudio = new PathToAudio();
         Concatenate concatenateR100 = new Concatenate();
         Duration duration = new Duration();
         MapR100 mapR100 = new MapR100();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = "F:\\textToAudio/готовое/";
+        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader("F:\\textToAudio/doc.txt");
+        FileReader fr = new FileReader(pathToAudio.getPathToAudio() +"doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter("F:\\textToAudio/docR100.txt");
+        FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
         String line = text;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -102,11 +103,11 @@ public class TextToAudioR100 {
         renameFileF.renameFile(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rad100);
-        listString = listString.replace(".wav,F:\\textToAudio/R100_AV", "").
+        listString = listString.replace(".wav,"+ pathToAudio.getPathToAudio() + "R100_AV", "").
 
                 replace("ОЗРА", "_");
 
-        listString = listString.replace(".wav,F:\\textToAudio/R100_AV", "").
+        listString = listString.replace(".wav,p"+ pathToAudio.getPathToAudio() + "R100_AV", "").
 
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
@@ -118,7 +119,7 @@ public class TextToAudioR100 {
         listString = listString.replace("(знаки препинания)" , "");
         listString = listString.replace("(отделяет слова)", "");
         listString = listString.replace("(отделяет предложения)", "");
-        listString = listString.replace("F:\\textToAudio/R_AV/","");
+        listString = listString.replace(pathToAudio.getPathToAudio() + "R_AV/","");
         listString = listString.replace(".wav","");
 
 
