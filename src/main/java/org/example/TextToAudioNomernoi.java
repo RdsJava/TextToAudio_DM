@@ -9,6 +9,7 @@ import java.util.List;
 public class TextToAudioNomernoi {
         public void textToAudioNomernoi(String text) throws IOException {
 
+            PathToAudio pathToAudio = new PathToAudio();
             MapNomernoi map = new MapNomernoi();
             String checkLanguagePath = "Nomernoi_AV/";
             String endFileName = " N ";
@@ -18,12 +19,12 @@ public class TextToAudioNomernoi {
             Duration duration = new Duration();
             RenameFile renameFileF = new RenameFile();
             IfDigitalInWords ifDigital = new IfDigitalInWords();
-            String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
+            String filePathName = pathToAudio.getPathToAudio() + "готовое/";
             String line;
             List<String> lines = new ArrayList<>();
             StringBuilder stringBuilder = new StringBuilder();
 
-            Reader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
+            Reader fr = new FileReader(pathToAudio.getPathToAudio() + "doc.txt");
             BufferedReader br = new BufferedReader(fr);
 
             String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -82,8 +83,8 @@ public class TextToAudioNomernoi {
             renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
             String listString = String.join(",", language);
-            listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/" + checkLanguagePath, "");
-            listString = listString.replace("/Users/recmac/Yandex.Disk.localized/textToAudio/" + checkLanguagePath, "").replaceAll("\\d", "");
+            listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + checkLanguagePath, "");
+            listString = listString.replace(pathToAudio.getPathToAudio() + checkLanguagePath, "").replaceAll("\\d", "");
             listString = listString.replace(".wav", "");
 
             System.out.println(endFileName + " с удалением путей++ " + listString);

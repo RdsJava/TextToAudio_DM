@@ -9,20 +9,21 @@ public class TextToAudioRadasteid {
 
     public void textToAudioRadasteid(String text) throws IOException {
 
+        PathToAudio pathToAudio =new PathToAudio();
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
         MapRadasteid mapRadasteid = new MapRadasteid();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
+        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
+        FileReader fr = new FileReader(pathToAudio.getPathToAudio() + "doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter("/Users/recmac/Yandex.Disk.localized/textToAudio/docR100.txt");
+        FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
         String line;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -88,9 +89,9 @@ public class TextToAudioRadasteid {
         renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", radadasteid);
-        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/Radasteid_AV", "");
+        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + "Radasteid_AV", "");
 
-        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/Radasteid_AV", "");
+        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + "Radasteid_AV", "");
 
 
         System.out.println("Радастеид с удалением путей++ " + listString);

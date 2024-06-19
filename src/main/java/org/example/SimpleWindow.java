@@ -11,6 +11,7 @@ public class SimpleWindow extends JFrame {
         super();
         setTitle("Языки");
 
+        PathToAudio pathToAudio = new PathToAudio();
         TextToAudioOporiHladovit textToAudioOporiHladovit = new TextToAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
         TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
@@ -62,7 +63,7 @@ public class SimpleWindow extends JFrame {
 
                 //Запись в файл текста:
                 try {
-                    FileWriter writer = new FileWriter("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
+                    FileWriter writer = new FileWriter(pathToAudio.getPathToAudio() + "doc.txt");
                     writer.write(d);
                     writer.flush();//Данные, которые вы записываете в Writer, иногда временно хранятся в буфере, метод flush() используется для сброса (flush) всех данных из буфера в целевой объект.
                 } catch (IOException ex) {
@@ -70,7 +71,7 @@ public class SimpleWindow extends JFrame {
                 }
                 BufferedReader brTest;
                 try {
-                    brTest = new BufferedReader(new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt"));
+                    brTest = new BufferedReader(new FileReader(pathToAudio.getPathToAudio() + "doc.txt"));
                 } catch (FileNotFoundException ex) {
                     throw new RuntimeException(ex);
                 }

@@ -14,7 +14,7 @@ public class TextToAudioCiklo {
         String checkLanguagePath = "Ciklo_AV/";
         String endFileName = " Ц ";
 
-
+        PathToAudio pathToAudio = new PathToAudio();
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
@@ -85,8 +85,8 @@ public class TextToAudioCiklo {
         renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
         String listString = String.join(",", language);
-        listString = listString.replace(".wav,/Users/recmac/Yandex.Disk.localized/textToAudio/" + checkLanguagePath, "");
-        listString = listString.replace("/Users/recmac/Yandex.Disk.localized/textToAudio/" + checkLanguagePath, "");
+        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + checkLanguagePath, "");
+        listString = listString.replace(  pathToAudio.getPathToAudio() + checkLanguagePath, "");
         listString = listString.replace(checkEndLanguage, "");
 
         System.out.println(endFileName + " с удалением путей++ " + listString);
