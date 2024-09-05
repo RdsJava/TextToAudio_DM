@@ -19,12 +19,12 @@ public class TextToAudioCiklo {
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital = new IfDigitalInWords();
-        String filePathName = "/Users/recmac/Yandex.Disk.localized/textToAudio/готовое/";
+        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
         String line;
         List<String> lines = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
 
-        Reader fr = new FileReader("/Users/recmac/Yandex.Disk.localized/textToAudio/doc.txt");
+        Reader fr = new FileReader(pathToAudio.getPathToAudio() + "doc.txt");
         BufferedReader br = new BufferedReader(fr);
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
