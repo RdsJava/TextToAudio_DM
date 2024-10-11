@@ -103,12 +103,10 @@ public class TextToAudioR100 {
         renameFileF.renameFile(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rad100);
-        listString = listString.replace(".wav,"+ pathToAudio.getPathToAudio() + "R100_AV", "").
-
+        listString = listString.replace(".wav,"+ pathToAudio.getPathLanguageR100(), "").
                 replace("ОЗРА", "_");
 
-        listString = listString.replace(".wav,p"+ pathToAudio.getPathToAudio() + "R100_AV", "").
-
+        listString = listString.replace(".wav,"+ pathToAudio.getPathLanguageR100(), "").
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
         //listString = listString.replace("F:\\textToAudio/R100_AV/", "").
@@ -119,12 +117,14 @@ public class TextToAudioR100 {
         listString = listString.replace("(знаки препинания)" , "");
         listString = listString.replace("(отделяет слова)", "");
         listString = listString.replace("(отделяет предложения)", "");
-        listString = listString.replace(pathToAudio.getPathToAudio() + "R_AV/","");
+        listString = listString.replace("(Открывает закрывает)", "");
+        listString = listString.replace(pathToAudio.getPathLanguageR100(),"");
         listString = listString.replace(".wav","");
-
+        listString = listString.replace("F:/YandexDisk/textToAudio/R_DM","");
+        listString = listString.replace("/","");
 
         //System.out.println(stringBuilderCheck);
-        System.out.println("Радастеид-100 с удалением путей++ " + listString);
+        System.out.println("Радастеид-100 с удалением путей -> " + listString);
     }
 }
 

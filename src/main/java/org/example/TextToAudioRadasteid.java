@@ -89,12 +89,13 @@ public class TextToAudioRadasteid {
         renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", radadasteid);
-        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + "Radasteid_AV", "");
+        listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");
+        listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");
+        listString = listString.replace(pathToAudio.getPathLanguageRadasteid(), "");
+        listString = listString.replace("/", "");
 
-        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + "Radasteid_AV", "");
 
-
-        System.out.println("Радастеид с удалением путей++ " + listString);
+        System.out.println("Радастеид с удалением путей -> " + listString);
     }
 }
 
