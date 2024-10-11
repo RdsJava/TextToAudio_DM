@@ -9,21 +9,21 @@ import java.util.List;
 public class TextToAudioRozuzOpori {
     public void textToAudioRozuzOpori(String text) throws IOException {
 
-        PathToAudio pathToAudio = new PathToAudio();
+        PathToAudioFiles pathToAudioFiles = new PathToAudioFiles();
         Concatenate concatenateR100 = new Concatenate();
         Duration duration = new Duration();
         MapRozus_Op mapRozus_Op = new MapRozus_Op();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
+        String filePathName = pathToAudioFiles.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader(pathToAudio.getPathToAudio() + "doc.txt");
+        FileReader fr = new FileReader(pathToAudioFiles.getPathToAudio() + "doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
+        FileWriter fw = new FileWriter(pathToAudioFiles.getPathToAudio() + "docR100.txt");
         String line;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -94,13 +94,13 @@ public class TextToAudioRozuzOpori {
         renameFileF.renameFile(filePathName + fileName + "_Розуз_опоры ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rozuzOpor);
-        listString = listString.replace("," + pathToAudio.getPathToAudio() + "Rozuz_Op_AV/", "").
+        listString = listString.replace("," + pathToAudioFiles.getPathToAudio() + "Rozuz_Op_AV/", "").
                 replace("_Отделение слов", "_");
 
-        listString = listString.replace(".wav,/" + pathToAudio.getPathToAudio() + "Rozuz_OP_AV/", "").
+        listString = listString.replace(".wav,/" + pathToAudioFiles.getPathToAudio() + "Rozuz_OP_AV/", "").
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
-        listString = listString.replace(pathToAudio.getPathToAudio() + "Rozuz_OP_AV/","");
+        listString = listString.replace(pathToAudioFiles.getPathToAudio() + "Rozuz_OP_AV/","");
         listString = listString.replace("_Начало переизлучения","< ");
         listString = listString.replace("_Конец переизлучения"," >");
         listString = listString.replace("_Заглавные буквы","^");

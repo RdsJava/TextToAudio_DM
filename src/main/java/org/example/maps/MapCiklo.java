@@ -1,6 +1,6 @@
 package org.example.maps;
 
-import org.example.PathToAudio;
+import org.example.PathToAudioFiles;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,78 +8,78 @@ import java.util.Map;
 public class MapCiklo {
     public String replace(char a) {
 
-        PathToAudio pathToAudio = new PathToAudio();
+        PathToAudioFiles pathToAudioFiles = new PathToAudioFiles();
 
         Map<Character, String> ciklohladovit = new HashMap<>();
 
-        ciklohladovit.put('_', pathToAudio.getPathToAudio() + "Ciklo_AV/_оль.wav"); // пробел
-        ciklohladovit.put('А', pathToAudio.getPathToAudio() + "Ciklo_AV/Аоль.wav"); ///Users/recmac/Yandex.Disk.localpathToAudio.getPathToAudio() + iCiklo_AV/_оль.wav
-        ciklohladovit.put('Б', pathToAudio.getPathToAudio() + "Ciklo_AV/Боль.wav");
-        ciklohladovit.put('В', pathToAudio.getPathToAudio() + "Ciklo_AV/Воль.wav");
-        ciklohladovit.put('Г', pathToAudio.getPathToAudio() + "Ciklo_AV/Голь.wav");
-        ciklohladovit.put('Д', pathToAudio.getPathToAudio() + "Ciklo_AV/Доль.wav");
-        ciklohladovit.put('Е', pathToAudio.getPathToAudio() + "Ciklo_AV/Еоль.wav");
-        ciklohladovit.put('Ё', pathToAudio.getPathToAudio() + "Ciklo_AV/Ёоль.wav");
-        ciklohladovit.put('Ж', pathToAudio.getPathToAudio() + "Ciklo_AV/Жоль.wav");
-        ciklohladovit.put('З', pathToAudio.getPathToAudio() + "Ciklo_AV/Золь.wav");
-        ciklohladovit.put('И', pathToAudio.getPathToAudio() + "Ciklo_AV/Иоль.wav");
-        ciklohladovit.put('Й', pathToAudio.getPathToAudio() + "Ciklo_AV/Йоль.wav");
-        ciklohladovit.put('К', pathToAudio.getPathToAudio() + "Ciklo_AV/Коль.wav");
-        ciklohladovit.put('Л', pathToAudio.getPathToAudio() + "Ciklo_AV/Лоль.wav");
-        ciklohladovit.put('М', pathToAudio.getPathToAudio() + "Ciklo_AV/Моль.wav");
-        ciklohladovit.put('Н', pathToAudio.getPathToAudio() + "Ciklo_AV/Ноль.wav");
-        ciklohladovit.put('О', pathToAudio.getPathToAudio() + "Ciklo_AV/Ооль.wav");
-        ciklohladovit.put('П', pathToAudio.getPathToAudio() + "Ciklo_AV/Поль.wav");
-        ciklohladovit.put('Р', pathToAudio.getPathToAudio() + "Ciklo_AV/Роль.wav");
-        ciklohladovit.put('С', pathToAudio.getPathToAudio() + "Ciklo_AV/Соль.wav");
-        ciklohladovit.put('Т', pathToAudio.getPathToAudio() + "Ciklo_AV/Толь.wav");
-        ciklohladovit.put('У', pathToAudio.getPathToAudio() + "Ciklo_AV/Уоль.wav");
-        ciklohladovit.put('Ф', pathToAudio.getPathToAudio() + "Ciklo_AV/Фоль.wav");
-        ciklohladovit.put('Х', pathToAudio.getPathToAudio() + "Ciklo_AV/Холь.wav");
-        ciklohladovit.put('Ц', pathToAudio.getPathToAudio() + "Ciklo_AV/Цоль.wav");
-        ciklohladovit.put('Ч', pathToAudio.getPathToAudio() + "Ciklo_AV/Чоль.wav");
-        ciklohladovit.put('Ш', pathToAudio.getPathToAudio() + "Ciklo_AV/Шоль.wav");
-        ciklohladovit.put('Щ', pathToAudio.getPathToAudio() + "Ciklo_AV/Щоль.wav");
-        ciklohladovit.put('Ъ', pathToAudio.getPathToAudio() + "Ciklo_AV/Ъоль.wav");
-        ciklohladovit.put('Ы', pathToAudio.getPathToAudio() + "Ciklo_AV/Ыоль.wav");
-        ciklohladovit.put('Ь', pathToAudio.getPathToAudio() + "Ciklo_AV/Ьоль.wav");
-        ciklohladovit.put('Э', pathToAudio.getPathToAudio() + "Ciklo_AV/Эоль.wav");
-        ciklohladovit.put('Ю', pathToAudio.getPathToAudio() + "Ciklo_AV/Юоль.wav");
-        ciklohladovit.put('Я', pathToAudio.getPathToAudio() + "Ciklo_AV/Яоль.wav");
+        ciklohladovit.put('_', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/_оль.wav"); // пробел
+        ciklohladovit.put('А', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Аоль.wav"); ///Users/recmac/Yandex.Disk.localpathToAudio.getPathToAudio() + iCiklo_DM/_оль.wav
+        ciklohladovit.put('Б', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Боль.wav");
+        ciklohladovit.put('В', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Воль.wav");
+        ciklohladovit.put('Г', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Голь.wav");
+        ciklohladovit.put('Д', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Доль.wav");
+        ciklohladovit.put('Е', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Еоль.wav");
+        ciklohladovit.put('Ё', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ёоль.wav");
+        ciklohladovit.put('Ж', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Жоль.wav");
+        ciklohladovit.put('З', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Золь.wav");
+        ciklohladovit.put('И', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Иоль.wav");
+        ciklohladovit.put('Й', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Йоль.wav");
+        ciklohladovit.put('К', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Коль.wav");
+        ciklohladovit.put('Л', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Лоль.wav");
+        ciklohladovit.put('М', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Моль.wav");
+        ciklohladovit.put('Н', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ноль.wav");
+        ciklohladovit.put('О', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ооль.wav");
+        ciklohladovit.put('П', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Поль.wav");
+        ciklohladovit.put('Р', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Роль.wav");
+        ciklohladovit.put('С', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Соль.wav");
+        ciklohladovit.put('Т', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Толь.wav");
+        ciklohladovit.put('У', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Уоль.wav");
+        ciklohladovit.put('Ф', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Фоль.wav");
+        ciklohladovit.put('Х', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Холь.wav");
+        ciklohladovit.put('Ц', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Цоль.wav");
+        ciklohladovit.put('Ч', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Чоль.wav");
+        ciklohladovit.put('Ш', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Шоль.wav");
+        ciklohladovit.put('Щ', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Щоль.wav");
+        ciklohladovit.put('Ъ', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ъоль.wav");
+        ciklohladovit.put('Ы', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ыоль.wav");
+        ciklohladovit.put('Ь', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Ьоль.wav");
+        ciklohladovit.put('Э', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Эоль.wav");
+        ciklohladovit.put('Ю', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Юоль.wav");
+        ciklohladovit.put('Я', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/Яоль.wav");
 
-        ciklohladovit.put('а', pathToAudio.getPathToAudio() + "Ciklo_AV/аоль.wav");
-        ciklohladovit.put('б', pathToAudio.getPathToAudio() + "Ciklo_AV/боль.wav");
-        ciklohladovit.put('в', pathToAudio.getPathToAudio() + "Ciklo_AV/воль.wav");
-        ciklohladovit.put('г', pathToAudio.getPathToAudio() + "Ciklo_AV/голь.wav");
-        ciklohladovit.put('д', pathToAudio.getPathToAudio() + "Ciklo_AV/доль.wav");
-        ciklohladovit.put('е', pathToAudio.getPathToAudio() + "Ciklo_AV/еоль.wav");
-        ciklohladovit.put('ё', pathToAudio.getPathToAudio() + "Ciklo_AV/ёоль.wav");
-        ciklohladovit.put('ж', pathToAudio.getPathToAudio() + "Ciklo_AV/жоль.wav");
-        ciklohladovit.put('з', pathToAudio.getPathToAudio() + "Ciklo_AV/золь.wav");
-        ciklohladovit.put('и', pathToAudio.getPathToAudio() + "Ciklo_AV/иоль.wav");
-        ciklohladovit.put('й', pathToAudio.getPathToAudio() + "Ciklo_AV/йоль.wav");
-        ciklohladovit.put('к', pathToAudio.getPathToAudio() + "Ciklo_AV/коль.wav");
-        ciklohladovit.put('л', pathToAudio.getPathToAudio() + "Ciklo_AV/лоль.wav");
-        ciklohladovit.put('м', pathToAudio.getPathToAudio() + "Ciklo_AV/моль.wav");
-        ciklohladovit.put('н', pathToAudio.getPathToAudio() + "Ciklo_AV/ноль.wav");
-        ciklohladovit.put('о', pathToAudio.getPathToAudio() + "Ciklo_AV/ооль.wav");
-        ciklohladovit.put('п', pathToAudio.getPathToAudio() + "Ciklo_AV/поль.wav");
-        ciklohladovit.put('р', pathToAudio.getPathToAudio() + "Ciklo_AV/роль.wav");
-        ciklohladovit.put('с', pathToAudio.getPathToAudio() + "Ciklo_AV/соль.wav");
-        ciklohladovit.put('т', pathToAudio.getPathToAudio() + "Ciklo_AV/толь.wav");
-        ciklohladovit.put('у', pathToAudio.getPathToAudio() + "Ciklo_AV/уоль.wav");
-        ciklohladovit.put('ф', pathToAudio.getPathToAudio() + "Ciklo_AV/фоль.wav");
-        ciklohladovit.put('х', pathToAudio.getPathToAudio() + "Ciklo_AV/холь.wav");
-        ciklohladovit.put('ц', pathToAudio.getPathToAudio() + "Ciklo_AV/цоль.wav");
-        ciklohladovit.put('ч', pathToAudio.getPathToAudio() + "Ciklo_AV/чоль.wav");
-        ciklohladovit.put('ш', pathToAudio.getPathToAudio() + "Ciklo_AV/шоль.wav");
-        ciklohladovit.put('щ', pathToAudio.getPathToAudio() + "Ciklo_AV/щоль.wav");
-        ciklohladovit.put('ъ', pathToAudio.getPathToAudio() + "Ciklo_AV/ъоль.wav");
-        ciklohladovit.put('ы', pathToAudio.getPathToAudio() + "Ciklo_AV/ыоль.wav");
-        ciklohladovit.put('ь', pathToAudio.getPathToAudio() + "Ciklo_AV/ьоль.wav");
-        ciklohladovit.put('э', pathToAudio.getPathToAudio() + "Ciklo_AV/эоль.wav");
-        ciklohladovit.put('ю', pathToAudio.getPathToAudio() + "Ciklo_AV/юоль.wav");
-        ciklohladovit.put('я', pathToAudio.getPathToAudio() + "Ciklo_AV/яоль.wav");
+        ciklohladovit.put('а', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/аоль.wav");
+        ciklohladovit.put('б', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/боль.wav");
+        ciklohladovit.put('в', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/воль.wav");
+        ciklohladovit.put('г', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/голь.wav");
+        ciklohladovit.put('д', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/доль.wav");
+        ciklohladovit.put('е', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/еоль.wav");
+        ciklohladovit.put('ё', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ёоль.wav");
+        ciklohladovit.put('ж', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/жоль.wav");
+        ciklohladovit.put('з', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/золь.wav");
+        ciklohladovit.put('и', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/иоль.wav");
+        ciklohladovit.put('й', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/йоль.wav");
+        ciklohladovit.put('к', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/коль.wav");
+        ciklohladovit.put('л', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/лоль.wav");
+        ciklohladovit.put('м', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/моль.wav");
+        ciklohladovit.put('н', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ноль.wav");
+        ciklohladovit.put('о', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ооль.wav");
+        ciklohladovit.put('п', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/поль.wav");
+        ciklohladovit.put('р', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/роль.wav");
+        ciklohladovit.put('с', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/соль.wav");
+        ciklohladovit.put('т', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/толь.wav");
+        ciklohladovit.put('у', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/уоль.wav");
+        ciklohladovit.put('ф', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/фоль.wav");
+        ciklohladovit.put('х', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/холь.wav");
+        ciklohladovit.put('ц', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/цоль.wav");
+        ciklohladovit.put('ч', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/чоль.wav");
+        ciklohladovit.put('ш', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/шоль.wav");
+        ciklohladovit.put('щ', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/щоль.wav");
+        ciklohladovit.put('ъ', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ъоль.wav");
+        ciklohladovit.put('ы', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ыоль.wav");
+        ciklohladovit.put('ь', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/ьоль.wav");
+        ciklohladovit.put('э', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/эоль.wav");
+        ciklohladovit.put('ю', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/юоль.wav");
+        ciklohladovit.put('я', pathToAudioFiles.getPathToAudio() + "Ciklo_DM/яоль.wav");
 
 
         return ciklohladovit.get(a);

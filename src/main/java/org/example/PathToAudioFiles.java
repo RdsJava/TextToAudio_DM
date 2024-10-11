@@ -1,12 +1,12 @@
 package org.example;
 
-public class PathToAudio {
+public class PathToAudioFiles {
 
     // private String pathToAudio = "/Users/recmac/Yandex.Disk.localized/textToAudio/";
     private String pathToAudio = "F:/YandexDisk/textToAudio/";
 
 
-    public PathToAudio() {
+    public PathToAudioFiles() {
         this.pathToAudio = pathToAudio;
     }
 

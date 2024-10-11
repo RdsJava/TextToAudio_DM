@@ -9,21 +9,21 @@ import java.util.List;
 public class TextToAudioR100 {
     public void textToAudioR100(String text) throws IOException {
 
-        PathToAudio pathToAudio = new PathToAudio();
+        PathToAudioFiles pathToAudioFiles = new PathToAudioFiles();
         Concatenate concatenateR100 = new Concatenate();
         Duration duration = new Duration();
         MapR100 mapR100 = new MapR100();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
 
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
+        String filePathName = pathToAudioFiles.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        FileReader fr = new FileReader(pathToAudio.getPathToAudio() +"doc.txt");
+        FileReader fr = new FileReader(pathToAudioFiles.getPathToAudio() +"doc.txt");
         BufferedReader br = new BufferedReader(fr);
-        FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
+        FileWriter fw = new FileWriter(pathToAudioFiles.getPathToAudio() + "docR100.txt");
         String line = text;
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -103,11 +103,11 @@ public class TextToAudioR100 {
         renameFileF.renameFile(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", rad100);
-        listString = listString.replace(".wav,"+ pathToAudio.getPathToAudio() + "R100_AV", "").
+        listString = listString.replace(".wav,"+ pathToAudioFiles.getPathToAudio() + "R100_AV", "").
 
                 replace("ОЗРА", "_");
 
-        listString = listString.replace(".wav,p"+ pathToAudio.getPathToAudio() + "R100_AV", "").
+        listString = listString.replace(".wav,p"+ pathToAudioFiles.getPathToAudio() + "R100_AV", "").
 
                 replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
@@ -119,7 +119,7 @@ public class TextToAudioR100 {
         listString = listString.replace("(знаки препинания)" , "");
         listString = listString.replace("(отделяет слова)", "");
         listString = listString.replace("(отделяет предложения)", "");
-        listString = listString.replace(pathToAudio.getPathToAudio() + "R_AV/","");
+        listString = listString.replace(pathToAudioFiles.getPathToAudio() + "R_AV/","");
         listString = listString.replace(".wav","");
 
 

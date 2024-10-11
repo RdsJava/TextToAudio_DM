@@ -9,7 +9,7 @@ import java.util.List;
 public class TextToAudioOporiRadasteid {
     public void textToAudioOporiRadasteid(String text) throws IOException {
 
-        PathToAudio pathToAudio = new PathToAudio();
+        PathToAudioFiles pathToAudioFiles = new PathToAudioFiles();
         MapO_R map = new MapO_R();
         //String checkEndLanguage = "оль";
         String checkLanguagePath = "O_Radasteid_AV";
@@ -20,12 +20,12 @@ public class TextToAudioOporiRadasteid {
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital = new IfDigitalInWords();
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
+        String filePathName = pathToAudioFiles.getPathToAudio() + "готовое/";
         String line;
         List<String> lines = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
 
-        Reader fr = new FileReader(pathToAudio.getPathToAudio() +"doc.txt");
+        Reader fr = new FileReader(pathToAudioFiles.getPathToAudio() +"doc.txt");
         BufferedReader br = new BufferedReader(fr);
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
@@ -87,8 +87,8 @@ public class TextToAudioOporiRadasteid {
         renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
         String listString = String.join(",", language);
-        listString = listString.replace(".wav," + pathToAudio.getPathToAudio() + checkLanguagePath, "");
-        listString = listString.replace(pathToAudio.getPathToAudio() + checkLanguagePath, "");
+        listString = listString.replace(".wav," + pathToAudioFiles.getPathToAudio() + checkLanguagePath, "");
+        listString = listString.replace(pathToAudioFiles.getPathToAudio() + checkLanguagePath, "");
         //listString = listString.replace(checkEndLanguage, "");
 
         System.out.println(endFileName + " с удалением путей++ " + listString);
