@@ -12,7 +12,7 @@ public class SimpleWindow extends JFrame {
         setTitle("Avtor");
 
         PathToAudio pathToAudio = new PathToAudio();
-        ChoiceLanguage choiceLanguage = new ChoiceLanguage();
+        //ChoiceLanguage choiceLanguage = new ChoiceLanguage();
 
         TextToAudioOporiHladovit textToAudioOporiHladovit = new TextToAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
@@ -90,15 +90,15 @@ public class SimpleWindow extends JFrame {
                     }
                     if (ciklo.isSelected()) {
                         textToAudioCiklo.textToAudioCiklo(text);
-                        choiceLanguage.setChoiceLanguage(1);
+
                     }
                     if (nomernoi.isSelected()) {
                         textToAudioNomernoi.textToAudioNomernoi(text);
-                        choiceLanguage.setChoiceLanguage(2);
+
                     }
                     if (ritmo.isSelected()) {
                         textToAudioRitmo.textToAudioRitmo(text);
-                        choiceLanguage.setChoiceLanguage(3);
+
                     }
                     if (o_radasteid.isSelected()) {
                         textToAudioOporiRadasteid.textToAudioOporiRadasteid(text);

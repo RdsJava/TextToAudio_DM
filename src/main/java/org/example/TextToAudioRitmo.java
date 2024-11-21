@@ -9,44 +9,28 @@ import java.util.List;
 public class TextToAudioRitmo {
     public void textToAudioRitmo(String text) throws IOException {
 
-        MapRitmo map = new MapRitmo();
-        String checkEndLanguage = "ИРЪ";
-        String endFileName = " Р ";
-
         PathToAudio pathToAudio = new PathToAudio();
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
         String filePathName = pathToAudio.getPathToAudio() + "готовое/";
-        CreateText createText = new CreateText();
         CreateNameFile fileName = new CreateNameFile();
+        CheckAudioText checkAudioText = new CheckAudioText();
 
-        String string = createText.createText(text);
-        String[] language = new String[string.length()];
-        String ss;
-        for (
-                int i = 0; i < string.length(); i++) {
-            ss = map.replace(string.charAt(i));
-            language[i] = ss;
-        }
+        CreateForConcatenateFile createForConcatenateFile = new CreateForConcatenateFile();
+        String [] language = createForConcatenateFile.CreateForConcatenateFile(text, "Ritmo");
 
         try {
-            concatenate.concatenateFiles(language, filePathName + fileName + endFileName);
+            concatenate.concatenateFiles(language, filePathName + fileName + " P ");
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
 
-        File fileLanguage = new File(filePathName + fileName + endFileName);
+        File fileLanguage = new File(filePathName + fileName + " P ");
+        renameFileF.renameFile(filePathName + fileName + " P ", duration.durationFileOnly48kGh(fileLanguage), ".wav");
 
-        renameFileF.renameFile(filePathName + fileName + endFileName, duration.durationFileOnly48kGh(fileLanguage), ".wav");
-
-        String listString = String.join(",", language);
-        listString = listString.replace(".wav," + pathToAudio.getPathLanguageRitmo(), "");
-        listString = listString.replace(pathToAudio.getPathLanguageRitmo(), "");
-        listString = listString.replace(checkEndLanguage, "");
-
-        System.out.println(endFileName + " с удалением путей++ " + listString);
+        checkAudioText.checkAudioText(language, "Ritmo");
     }
 }
 

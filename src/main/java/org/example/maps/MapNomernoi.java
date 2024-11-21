@@ -2,10 +2,12 @@ package org.example.maps;
 
 import org.example.PathToAudio;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-public class MapNomernoi {
+public class MapNomernoi implements Map<Character, String> {
     public String replace(char a) {
         PathToAudio pathToAudio = new PathToAudio();
         Map<Character, String> nomernoi = new HashMap<>();
@@ -80,5 +82,65 @@ public class MapNomernoi {
         nomernoi.put('я', pathToAudio.getPathToAudio() + "Nomernoi_DM/я33.wav");
 
         return nomernoi.get(a);
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public boolean containsKey(Object key) {
+        return false;
+    }
+
+    @Override
+    public boolean containsValue(Object value) {
+        return false;
+    }
+
+    @Override
+    public String get(Object key) {
+        return null;
+    }
+
+    @Override
+    public String put(Character key, String value) {
+        return null;
+    }
+
+    @Override
+    public String remove(Object key) {
+        return null;
+    }
+
+    @Override
+    public void putAll(Map<? extends Character, ? extends String> m) {
+
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public Set<Character> keySet() {
+        return null;
+    }
+
+    @Override
+    public Collection<String> values() {
+        return null;
+    }
+
+    @Override
+    public Set<Entry<Character, String>> entrySet() {
+        return null;
     }
 }
