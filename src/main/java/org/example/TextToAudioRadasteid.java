@@ -29,6 +29,9 @@ public class TextToAudioRadasteid {
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
         String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
 
+
+        stringBuilder.append("%");
+
         // Удаление пустых строк и пробелов в конце и в начале строк++
         while ((line = br.readLine()) != null) {
             line = line.trim(); // remove leading and trailing whitespace
@@ -67,8 +70,11 @@ public class TextToAudioRadasteid {
         if (string.endsWith("_")) {
             string = string.substring(0, string.length() - 1);
         }
-
         System.out.println("string " + string);
+
+        string = string + "*";
+        System.out.println("string+ " + string);
+
         String[] radadasteid = new String[string.length()];
         String ss;
         for (
@@ -89,10 +95,11 @@ public class TextToAudioRadasteid {
         renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
 
         String listString = String.join(",", radadasteid);
-        listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");
-        listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");
+       // listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");
+       listString = listString.replace(".wav,", "");
         listString = listString.replace(pathToAudio.getPathLanguageRadasteid(), "");
-        listString = listString.replace("/", "");
+        listString = listString.replace(pathToAudio.getPathToAudio(), "");
+       // listString = listString.replace("/", "");
 
 
         System.out.println("Радастеид с удалением путей -> " + listString);

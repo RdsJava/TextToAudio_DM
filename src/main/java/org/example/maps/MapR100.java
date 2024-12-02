@@ -102,6 +102,9 @@ public class MapR100 {
         radasteid100.put('#', pathToAudio.getPathToAudio() + "R100_DM/02 ЩХ (Заглавные буквы внутри строки).wav");
         radasteid100.put('>', pathToAudio.getPathToAudio() + "R100_DM/37 РИТЛ (Открывает закрывает).wav");
         radasteid100.put('$', pathToAudio.getPathToAudio() + "R100_DM/39 СТЛУ(отделяет предложения).wav");
+        radasteid100.put('%', pathToAudio.getPathToAudio() + "/Начало_переизлучения.wav");
+        radasteid100.put('*', pathToAudio.getPathToAudio() + "/Конец_переизлучения.wav");
+
 
 
         return radasteid100.get(a);

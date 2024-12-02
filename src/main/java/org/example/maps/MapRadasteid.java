@@ -12,28 +12,6 @@ public class MapRadasteid {
 
         Map<Character, String> radasteid = new HashMap<>();
 
-        radasteid.put('_', pathToAudio.getPathToAudio() + "Radasteid_DM/_.wav");
-        radasteid.put('#', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('$', pathToAudio.getPathToAudio() + "Radasteid_DM/_Отделяет предложения 142(2) Радастея 0 N.wav");
-        radasteid.put(',', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('"', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put(';', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put(':', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('!', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('?', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put(')', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('(', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('+', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('=', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('-', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('.', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('↓', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('»', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('«', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-        radasteid.put('–', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
-
-
-
         radasteid.put('А', pathToAudio.getPathToAudio() + "Radasteid_DM/А.wav");
         radasteid.put('Б', pathToAudio.getPathToAudio() + "Radasteid_DM/Б.wav");
         radasteid.put('В', pathToAudio.getPathToAudio() + "Radasteid_DM/В.wav");
@@ -101,6 +79,28 @@ public class MapRadasteid {
         radasteid.put('э', pathToAudio.getPathToAudio() + "Radasteid_DM/э.wav");
         radasteid.put('ю', pathToAudio.getPathToAudio() + "Radasteid_DM/ю.wav");
         radasteid.put('я', pathToAudio.getPathToAudio() + "Radasteid_DM/я.wav");
+
+        radasteid.put('_', pathToAudio.getPathToAudio() + "Radasteid_DM/_.wav");
+        radasteid.put('#', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('$', pathToAudio.getPathToAudio() + "Radasteid_DM/_Отделяет предложения 142(2) Радастея 0 N.wav");
+        radasteid.put(',', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('"', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put(';', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put(':', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('!', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('?', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put(')', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('(', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('+', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('=', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('-', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('.', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('↓', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('»', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('«', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('–', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
+        radasteid.put('%', pathToAudio.getPathToAudio() + "/Начало_переизлучения.wav");
+        radasteid.put('*', pathToAudio.getPathToAudio() + "/Конец_переизлучения.wav");
 
         return radasteid.get(a);
     }
