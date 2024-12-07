@@ -8,7 +8,7 @@ import java.nio.file.NoSuchFileException;
 
 public class RenameFile {
 
-    public void renameFile(String fileName, String fileTime, String end) {
+    public String renameFile(String fileName, String fileTime, String end) {
 
         File file;
         File dest = null;
@@ -17,7 +17,7 @@ public class RenameFile {
             // исходный файл
             file = new File(fileName);
             if (!file.exists()) {
-                throw new NoSuchFileException("The source file does not exist.");
+                throw new NoSuchFileException("The source file does not exist. Файл не найден");
             }
 
             // целевой файл
@@ -35,5 +35,6 @@ public class RenameFile {
                 IOException e) {
             e.printStackTrace();
         }
+        return String.valueOf(dest);
     }
 }

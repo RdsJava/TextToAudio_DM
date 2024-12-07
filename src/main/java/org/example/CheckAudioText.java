@@ -31,6 +31,8 @@ public class CheckAudioText {
         listString = listString.replace(".wav", "");
         listString = listString.replace(path, "");
         listString = listString.replace(checkEndLanguage, "");
+        listString = listString.replace("F:\\textToAudio/Начало_переизлучения",  "Фраза Начало ");
+        listString = listString.replace(",F:\\textToAudio/Конец_переизлучения",  " Фраза Конец");
 
         System.out.println(endFileName + " с удалением путей -> " + listString);
     }

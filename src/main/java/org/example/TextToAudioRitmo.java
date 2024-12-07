@@ -13,23 +13,28 @@ public class TextToAudioRitmo {
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
         RenameFile renameFileF = new RenameFile();
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
-        CreateNameFile fileName = new CreateNameFile();
+        String filePath = pathToAudio.getPathToAudio() + "готовое/";
+        CreateNameFile fileNames = new CreateNameFile();
         CheckAudioText checkAudioText = new CheckAudioText();
-
         CreateForConcatenateFile createForConcatenateFile = new CreateForConcatenateFile();
+        WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
+
+        String fileName = fileNames.createNameFile(text);
         String [] language = createForConcatenateFile.CreateForConcatenateFile(text, "Ritmo");
 
         try {
-            concatenate.concatenateFiles(language, filePathName + fileName + " P ");
+            concatenate.concatenateFiles(language, filePath + fileName + "_Р_");
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
 
-        File fileLanguage = new File(filePathName + fileName + " P ");
-        renameFileF.renameFile(filePathName + fileName + " P ", duration.durationFileOnly48kGh(fileLanguage), ".wav");
+        File fileLanguage = new File(filePath + fileName + "_Р_");
 
+        String nameFileWav = renameFileF.renameFile(filePath + fileName + "_Р_", duration.durationFileOnly48kGh(fileLanguage), ".wav");
+        String nameFileMp3 = nameFileWav.replaceAll("wav", "mp3");
+
+        wavToMp3Converter.converterWavToMp3(nameFileWav, nameFileMp3);
         checkAudioText.checkAudioText(language, "Ritmo");
     }
 }

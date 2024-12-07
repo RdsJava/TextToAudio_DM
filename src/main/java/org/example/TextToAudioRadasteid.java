@@ -15,8 +15,9 @@ public class TextToAudioRadasteid {
         MapRadasteid mapRadasteid = new MapRadasteid();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
+        WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
 
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
+        String filePath = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -84,15 +85,18 @@ public class TextToAudioRadasteid {
         }
 
         try {
-            concatenate.concatenateFiles(radadasteid, filePathName + fileName + " Радастеид ");
+            concatenate.concatenateFiles(radadasteid, filePath + fileName + "_Радастеид_");
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
 
-        File fileR100 = new File(filePathName + fileName + " Радастеид ");
+        File fileRadasteid = new File(filePath + fileName + "_Радастеид_");
 
-        renameFileF.renameFile(filePathName + fileName + " Радастеид ", duration.durationFileOnly48kGh(fileR100), ".wav");
+        String nameFileWav = renameFileF.renameFile(filePath + fileName + "_Радастеид_", duration.durationFileOnly48kGh(fileRadasteid), ".wav");
+        String nameFileMp3 = nameFileWav.replaceAll("wav", "mp3");
+
+        wavToMp3Converter.converterWavToMp3(nameFileWav, nameFileMp3);
 
         String listString = String.join(",", radadasteid);
        // listString = listString.replace(".wav," + pathToAudio.getPathLanguageRadasteid(), "");

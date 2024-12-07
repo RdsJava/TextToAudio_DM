@@ -15,8 +15,9 @@ public class TextToAudioR100 {
         MapR100 mapR100 = new MapR100();
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital = new IfDigitalInWords();
+        WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
 
-        String filePathName = pathToAudio.getPathToAudio() + "готовое/";
+        String filePath = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -90,41 +91,43 @@ public class TextToAudioR100 {
         }
 
         try {
-            concatenateR100.concatenateFiles(rad100, filePathName + fileName + "_Р100 ");
+            concatenateR100.concatenateFiles(rad100, filePath + fileName + "_Р100_");
         } catch (
                 Exception e) {
             e.printStackTrace();
         }
 
-        File fileR100 = new File(filePathName + fileName + "_Р100 ");
+        File fileR100 = new File(filePath + fileName + "_Р100_");
+        String nameFileWav = renameFileF.renameFile(filePath + fileName + "_Р100_", duration.durationFileOnly48kGh(fileR100), ".wav");
+        String nameFileMp3 = nameFileWav.replaceAll("wav", "mp3");
 
-        renameFileF.renameFile(filePathName + fileName + "_Р100 ", duration.durationFileOnly48kGh(fileR100), ".wav");
+        wavToMp3Converter.converterWavToMp3(nameFileWav, nameFileMp3);
+
 
         String listString = String.join(",", rad100);
         listString = listString.replace(
-                ".wav," + pathToAudio.getPathLanguageR100(), "")
-                        .replace("ОЗРА", "_");
+                ".wav," + pathToAudio.getPathLanguageR100(), "");
 
         listString = listString.replace(
                 ".wav," + pathToAudio.getPathLanguageR100(), "")
                         .replaceAll("\\d", ""); //replaceAll("\\d", "") удаляет все цифры
 
         listString = listString.replace(
-                "(Заглавные буквы в начале строки)", "");
+                "ЦЖ (Заглавные буквы в начале строки)", "+ЦЖ_");
         listString = listString.replace(
-                "(Заглавные буквы внутри строки)", "");
+                "ЩХ (Заглавные буквы внутри строки)", "+ЩХ_");
         listString = listString.replace(
-                "(знаки препинания)", "");
+                "ФШ (знаки препинания)", "+ФШ ");
         listString = listString.replace(
-                "(отделяет слова)", "");
+                "ОЗРА (отделяет слова)", "_");
         listString = listString.replace(
-                "(отделяет предложения)", "");
+                "СТЛУ (отделяет предложения)", "+СТЛУ ");
         listString = listString.replace(
-                "(Открывает закрывает)", "");
+                "РИТЛ (Открывает закрывает)", " +РИТЛ ");
         listString = listString.replace(
                 pathToAudio.getPathLanguageR100(), "");
         listString = listString.replace(
-                ".wav", "");
+                ".wav", " ");
         listString = listString.replace(
                 "F:/YandexDisk/textToAudio/R_DM", "");
 
@@ -132,6 +135,9 @@ public class TextToAudioR100 {
                 pathToAudio.getPathToAudio(), "");
         listString = listString.replace(
                 "/", "");
+
+        listString = listString.replace(
+                " ", "*");
 
         //System.out.println(stringBuilderCheck);
         System.out.println(
