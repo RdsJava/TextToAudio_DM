@@ -90,15 +90,12 @@ public class SimpleWindow extends JFrame {
                     }
                     if (ciklo.isSelected()) {
                         textToAudioCiklo.textToAudioCiklo(text);
-
                     }
                     if (nomernoi.isSelected()) {
                         textToAudioNomernoi.textToAudioNomernoi(text);
-
                     }
                     if (ritmo.isSelected()) {
                         textToAudioRitmo.textToAudioRitmo(text);
-
                     }
                     if (o_radasteid.isSelected()) {
                         textToAudioOporiRadasteid.textToAudioOporiRadasteid(text);

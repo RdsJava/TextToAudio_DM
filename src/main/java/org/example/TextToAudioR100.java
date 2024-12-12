@@ -29,6 +29,7 @@ public class TextToAudioR100 {
 
         String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
         String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
+        fileName = fileName.replaceAll("\\s", "_");
 
         // Удаление пустых строк и пробелов в конце и в начале строк++
         while ((line = br.readLine()) != null) {

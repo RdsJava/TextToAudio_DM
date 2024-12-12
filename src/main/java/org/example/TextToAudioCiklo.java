@@ -9,7 +9,6 @@ public class TextToAudioCiklo  {
 
     public void textToAudioCiklo(String text) throws IOException {
 
-
         PathToAudio pathToAudio = new PathToAudio();
         Concatenate concatenate = new Concatenate();
         Duration duration = new Duration();
@@ -20,6 +19,7 @@ public class TextToAudioCiklo  {
         WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
 
         String fileName = fileNames.createNameFile(text);
+        //
         String filePath = pathToAudio.getPathToAudio() + "готовое/";
         String[] language = createForConcatenateFile.CreateForConcatenateFile(text, "Ciklo");
 
