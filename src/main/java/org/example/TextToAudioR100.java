@@ -16,6 +16,7 @@ public class TextToAudioR100 {
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital = new IfDigitalInWords();
         WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
+        CreateNameFile createNameFile = new CreateNameFile();
 
         String filePath = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
@@ -27,9 +28,9 @@ public class TextToAudioR100 {
         FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
         String line = text;
 
-        String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
-        String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
-        fileName = fileName.replaceAll("\\s", "_");
+
+        String fileName = createNameFile.createNameFile(text);
+
 
         // Удаление пустых строк и пробелов в конце и в начале строк++
         while ((line = br.readLine()) != null) {

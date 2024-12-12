@@ -16,6 +16,7 @@ public class TextToAudioRadasteid {
         RenameFile renameFileF = new RenameFile();
         IfDigitalInWords ifDigital =new IfDigitalInWords();
         WavToMp3Converter wavToMp3Converter = new WavToMp3Converter();
+        CreateNameFile createNameFile = new CreateNameFile();
 
         String filePath = pathToAudio.getPathToAudio() + "готовое/";
         List<String> lines = new ArrayList<>();
@@ -27,8 +28,7 @@ public class TextToAudioRadasteid {
         FileWriter fw = new FileWriter(pathToAudio.getPathToAudio() + "docR100.txt");
         String line;
 
-        String firstStringNoWhiteSpaceStartEnd = text.replaceAll("^\\s+", "").replaceAll("\\s+$", "");
-        String fileName = firstStringNoWhiteSpaceStartEnd.toUpperCase();
+        String fileName = createNameFile.createNameFile(text);
 
 
         stringBuilder.append("%");
