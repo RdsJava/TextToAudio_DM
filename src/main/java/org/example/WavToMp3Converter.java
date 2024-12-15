@@ -8,7 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class WavToMp3Converter {
-    public void converterWavToMp3(String wavFilePath, String mp3FilePath) throws IOException {
+    public void converterWavToMp3(String wavFilePath, String mp3FilePath) {
 
         // Команда для конвертации
         String command = "cmd.exe /c start " + "ffmpeg -i " + wavFilePath + " -c:a libmp3lame -b:a 96k " + mp3FilePath; // пробел разделитель в этой токе
