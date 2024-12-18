@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 public class WavToMp3Converter {
     public void converterWavToMp3(String wavFilePath, String mp3FilePath) {
 
-        // Команда для конвертации
+        // Команда для конвертации с помощью командной строки (без командной строки ограничение больше 24 минут файл.wav в файл.mp3 не конвентирует)
         String command = "cmd.exe /c start " + "ffmpeg -i " + wavFilePath + " -c:a libmp3lame -b:a 96k " + mp3FilePath; // пробел разделитель в этой токе
         //String command = "cmd.exe /c start " + "ffmpeg -i " + wavFilePath +  " -c:a libfdk_aac -profile:a aac_he -b:a 64k " + mp3FilePath;
 

@@ -1,5 +1,6 @@
 package org.example.maps;
 
+import org.example.EndSoundFileRandom;
 import org.example.PathToAudio;
 
 import java.util.HashMap;
@@ -9,6 +10,7 @@ public class MapRadasteid {
     public String replaceRadasteid(char a) {
 
         PathToAudio pathToAudio = new PathToAudio();
+        EndSoundFileRandom endSoundFileRandom = new EndSoundFileRandom();
 
         Map<Character, String> radasteid = new HashMap<>();
 
@@ -101,6 +103,7 @@ public class MapRadasteid {
         radasteid.put('–', pathToAudio.getPathToAudio() + "Radasteid_DM/25.wav");
         radasteid.put('%', pathToAudio.getPathToAudio() + "/Начало_переизлучения.wav");
         radasteid.put('*', pathToAudio.getPathToAudio() + "/Конец_переизлучения.wav");
+        radasteid.put('&', "F:\\YandexDisk/textToAudio/sound/v" + endSoundFileRandom.endSoundFileRandom() + ".wav");
 
         return radasteid.get(a);
     }

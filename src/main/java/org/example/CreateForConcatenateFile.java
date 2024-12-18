@@ -50,6 +50,9 @@ public class CreateForConcatenateFile {
 
         ss.append("F:\\textToAudio/Конец_переизлучения.wav");
 
+        int rdm = (int) (Math.random() * 5);
+        ss.append(",F:\\textToAudio/Sound/v" + rdm + ".wav");
+
         String sbString = ss.toString();
         language = sbString.split(",");
 

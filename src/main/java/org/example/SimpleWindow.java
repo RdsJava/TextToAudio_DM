@@ -12,18 +12,19 @@ public class SimpleWindow extends JFrame {
         setTitle("Avtor");
 
         PathToAudio pathToAudio = new PathToAudio();
-        //ChoiceLanguage choiceLanguage = new ChoiceLanguage();
 
         TextToAudioOporiHladovit textToAudioOporiHladovit = new TextToAudioOporiHladovit();
         TextToAudioCiklo textToAudioCiklo = new TextToAudioCiklo();
         TextToAudioNomernoi textToAudioNomernoi = new TextToAudioNomernoi();
         TextToAudioRitmo textToAudioRitmo = new TextToAudioRitmo();
-        TextToAudioOporiRadasteid textToAudioOporiRadasteid = new  TextToAudioOporiRadasteid();
+        TextToAudioOporiRadasteid textToAudioOporiRadasteid = new TextToAudioOporiRadasteid();
         TextToAudioR100 textToAudioR100 = new TextToAudioR100();
         TextToAudioRadasteid textToAudioRadasteid = new TextToAudioRadasteid();
         TextToAudioRozuzOpori textToAudioRozuzOpori = new TextToAudioRozuzOpori();
 
-        JTextArea textArea = new JTextArea(30, 30);
+        JTextArea textArea = new JTextArea(60, 60);
+        textArea.setLineWrap(true); //Управление включением переноса текста по строкам и типом этого переноса.
+        textArea.setWrapStyleWord(true); //еренос происходит по словам, которые не разбиваются на части, а переходят на новую строку целиком
 
         JButton click = new JButton("Создать");// Создание кнопки
 
@@ -36,25 +37,38 @@ public class SimpleWindow extends JFrame {
         JCheckBox radasteid = new JCheckBox("Радастеид", false);
         JCheckBox rozuzOpori = new JCheckBox("Розуз-опоры", false);
 
+        JPanel mainPanel = new JPanel(); // Главная панель для обьединения textPanel и container
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS)); //* Метод setContentPane позволяет заменить панель содержимого окна.
+        getContentPane().add(mainPanel);// Панель содержимого
 
+        JPanel textPanel = new JPanel();// Текстовое поле
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout()); // FlowLayout - Менеджер последовательного размещения
+        JPanel container = new JPanel(); // Поле с кнопками
+        GridLayout layout = new GridLayout(9, 0, 0, 2); //Табличное расположение GridLayout
+        container.setLayout(layout);  //Упорядочивание кнопок(container) в табличный вид(layout)
+
+        JPanel flow = new JPanel(new FlowLayout(FlowLayout.LEFT));// Для расположения поля с кнопками слева от текстового поля FlowLayout - Менеджер последовательного размещения
+        flow.add(container);
+
+        mainPanel.add(textPanel); //Добавляем текстовое поле на Главную панель
+        mainPanel.add(flow);//Добавляем "левое" поле кнопок на Главную панель
+
 
 //Созданное поле добавляется в окно аплета методом add.
-        panel.add(textArea);
-        panel.add(click);
+        textPanel.add(textArea);
 
-        panel.add(o_hladovit);
-        panel.add(ciklo);
-        panel.add(nomernoi);
-        panel.add(ritmo);
-        panel.add(o_radasteid);
-        panel.add(radasteid100);
-        panel.add(radasteid);
-        panel.add(rozuzOpori);
+        container.add(click);
+        container.add(o_hladovit);
+        container.add(ciklo);
+        container.add(nomernoi);
+        container.add(ritmo);
+        container.add(o_radasteid);
+        container.add(radasteid100);
+        container.add(radasteid);
+        container.add(rozuzOpori);
 
-        setContentPane(panel); /* Метод setContentPane(JPanel panel) позволяет заменить панель содержимого окна.*/
+
+        //setContentPane(container);
         pack(); //устанавливает такой минимальный размер контейнера, который достаточен для отображения всех компонентов.
 
 // метод для сохранения в файл введенного текста в поле

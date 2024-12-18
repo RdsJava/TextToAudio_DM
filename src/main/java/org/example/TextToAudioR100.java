@@ -81,7 +81,7 @@ public class TextToAudioR100 {
         }
         //string = "%"; // добавления фразы "начало п.."
         string = "%" + ">" + string; //Открытие языка
-        string = string + ">" + "*"; // Закрытие языка
+        string = string + ">" + "*" + "&"; // Закрытие языка
         System.out.println("string " + string);
 
         String[] rad100 = new String[string.length()];

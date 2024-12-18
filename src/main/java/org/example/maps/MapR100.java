@@ -1,5 +1,6 @@
 package org.example.maps;
 
+import org.example.EndSoundFileRandom;
 import org.example.PathToAudio;
 
 import java.util.HashMap;
@@ -10,6 +11,7 @@ public class MapR100 {
     public String replaceR100(char a) {
 
         PathToAudio pathToAudio = new PathToAudio();
+        EndSoundFileRandom endSoundFileRandom = new EndSoundFileRandom();
 
         Map<Character, String> radasteid100 = new HashMap<>();
 
@@ -104,8 +106,7 @@ public class MapR100 {
         radasteid100.put('$', pathToAudio.getPathToAudio() + "R100_DM/39 СТЛУ(отделяет предложения).wav");
         radasteid100.put('%', pathToAudio.getPathToAudio() + "/Начало_переизлучения.wav");
         radasteid100.put('*', pathToAudio.getPathToAudio() + "/Конец_переизлучения.wav");
-
-
+        radasteid100.put('&', "F:\\YandexDisk/textToAudio/sound/v" + endSoundFileRandom.endSoundFileRandom() + ".wav");
 
         return radasteid100.get(a);
     }
