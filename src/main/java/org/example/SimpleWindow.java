@@ -38,16 +38,16 @@ public class SimpleWindow extends JFrame {
         JCheckBox rozuzOpori = new JCheckBox("Розуз-опоры", false);
 
         JPanel mainPanel = new JPanel(); // Главная панель для обьединения textPanel и container
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS)); //* Метод setContentPane позволяет заменить панель содержимого окна.
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.LINE_AXIS)); //* Метод setContentPane позволяет заменить панель содержимого окна.
         getContentPane().add(mainPanel);// Панель содержимого
 
         JPanel textPanel = new JPanel();// Текстовое поле
-
         JPanel container = new JPanel(); // Поле с кнопками
+
         GridLayout layout = new GridLayout(9, 0, 0, 2); //Табличное расположение GridLayout
         container.setLayout(layout);  //Упорядочивание кнопок(container) в табличный вид(layout)
 
-        JPanel flow = new JPanel(new FlowLayout(FlowLayout.LEFT));// Для расположения поля с кнопками слева от текстового поля FlowLayout - Менеджер последовательного размещения
+        JPanel flow = new JPanel();// Для расположения поля с кнопками слева от текстового поля FlowLayout - Менеджер последовательного размещения
         flow.add(container);
 
         mainPanel.add(textPanel); //Добавляем текстовое поле на Главную панель
