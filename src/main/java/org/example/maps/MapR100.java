@@ -99,7 +99,8 @@ public class MapR100 {
         radasteid100.put('↓', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav");
         radasteid100.put('»', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav");
         radasteid100.put('«', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav");
-        radasteid100.put('–', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav");
+        radasteid100.put('–', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav"); // короткре тире
+        radasteid100.put('—', pathToAudio.getPathToAudio() + "R100_DM/03 ФШ (знаки препинания).wav");// длинное тире
         radasteid100.put('^', pathToAudio.getPathToAudio() + "R100_DM/01 ЦЖ (Заглавные буквы в начале строки).wav");
         radasteid100.put('#', pathToAudio.getPathToAudio() + "R100_DM/02 ЩХ (Заглавные буквы внутри строки).wav");
         radasteid100.put('>', pathToAudio.getPathToAudio() + "R100_DM/37 РИТЛ (Открывает закрывает).wav");
